@@ -28,10 +28,20 @@
                 <!-- nav section -->
                 <nav>
                     <ul class="flex justify-start items-center gap-10">
-                        <li class="text-[20px] font-semibold text-gray-800">
-                            Product</li>
-                        <li class="text-[20px] font-semibold text-gray-800">
-                            Pricing</li>
+                        <li>
+                            <a href="#" class="relative group text-[20px] font-semibold text-gray-800">
+                                Product
+                                <span
+                                    class="absolute bottom-0 left-0 h-[2px] w-0 bg-gray-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="relative group text-[20px] font-semibold text-gray-800">
+                                Pricing
+                                <span
+                                    class="absolute bottom-0 left-0 h-[2px] w-0 bg-gray-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -66,10 +76,12 @@
 
     <!-- hero section -->
 
-    <div class="w-full h-[600px] bg-cover  flex justify-end items-center px-10"
-        style="background-image: url('./images/hero%20image.jpg');">
+    <div class=" bg-[#F5F5F5]  flex justify-center items-center gap-10 pb-5 ">
 
-        <div class="w-[700px] flex flex-col items-end justify-center text-center">
+        <div class="">
+            <img src="./images/hero image (2).png" alt="" class="w-70">
+        </div>
+        <div class="max-w-2xl  w-full flex flex-col items-end justify-center text-center">
             <h2
                 class="text-[60px] font-bold leading-[70px] px-10 bg-gradient-to-r from-[#26B199]  to-[#1a1a37] text-transparent bg-clip-text">
                 Moderne Recruiting-Lösungen für Ihr Unternehmen
@@ -108,9 +120,9 @@
 
     <!-- solution section -->
 
-    <div class="bg-[#151a21] max-w-7xl mx-auto pb-10">
+    <div class="bg-[#151a21]  pb-10">
 
-        <div class="flex flex-col items-center justify-center  pt-10 ">
+        <div class="max-w-7xl mx-auto w-full flex flex-col items-center justify-center  pt-10 ">
             <button
                 class="text-center text-[20px] md:text-[24px] px-8 py-3 rounded-md text-white font-medium
                     transition-all duration-300 ease-in-out cursor-pointer bg-[#143D4A] hover:bg-[#376D6C] hover:shadow-lg hover:scale-[1.03]">
@@ -131,10 +143,11 @@
         </div>
 
         <div
-            class=" max-w-6xl h-full mx-auto border border-white mt-10 rounded-2xl bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]">
+            class=" max-w-7xl mx-auto w-full border border-white mt-10 rounded-2xl bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37] ">
 
-            <div class=" w-full h-screen flex justify-center items-center my-10">
-                <img src="./images/takent management images.png" alt="Example" class="w-[1000px] h-full   rounded-2xl">
+            <div class=" flex justify-center items-center my-10 px-10">
+                <img src="./images/takent management images.png" alt="Example"
+                    class="max-w-7xl mx-auto w-full   rounded-2xl">
             </div>
 
         </div>
@@ -151,14 +164,17 @@
                 <div
                     class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
                     <div class="flex justify-center items-center  bg-[#26B199] ">
-                        <img src="./images/Application management.jpg" alt="Employee Compensation" class="w-full h-[160px] object-cover">
+                        <img src="./images/Application management.jpg" alt="Employee Compensation"
+                            class="w-full h-[160px] object-cover">
                     </div>
                     <div class="px-6 pt-2 ">
                         <h3 class="text-2xl font-bold text-center mb-3">Application Management</h3>
                         <p class=" text-sm leading-relaxed mb-2 text-center">
-                            Track and manage applications with ease. Our system helps you stay organized and never miss a candidate.
-                        </p> 
-                         <a href="#" class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
+                            Track and manage applications with ease. Our system helps you stay organized and never miss
+                            a candidate.
+                        </p>
+                        <a href="#"
+                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
@@ -175,7 +191,7 @@
                             <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
                         </div>
 
-                       
+
                     </div>
                 </div>
 
@@ -183,7 +199,8 @@
                 <div
                     class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
                     <div class="flex justify-center items-center  bg-[#26B199] ">
-                        <img src="./images/career card 2.webp" alt="Employee Compensation" class="w-full h-full object-cover">
+                        <img src="./images/career card 2.webp" alt="Employee Compensation"
+                            class="w-full h-full object-cover">
                     </div>
                     <div class="px-6 pt-2 ">
                         <h3 class="text-2xl font-bold text-center mb-3">Career Page</h3>
@@ -191,7 +208,8 @@
                             Create a professional careers page for your company. Showcase your job openings and attract
                             top talent with a modern design.
                         </p>
-                         <a href="#" class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
+                        <a href="#"
+                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
@@ -208,7 +226,7 @@
                             <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
                         </div>
 
-                       
+
                     </div>
                 </div>
 
@@ -216,14 +234,17 @@
                 <div
                     class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
                     <div class="flex justify-center items-center  bg-[#26B199] ">
-                        <img src="./images/HR analyses.webp" alt="Employee Compensation" class="w-full h-[160px] object-cover">
+                        <img src="./images/HR analyses.webp" alt="Employee Compensation"
+                            class="w-full h-[160px] object-cover">
                     </div>
                     <div class="px-6 pt-2 ">
                         <h3 class="text-2xl font-bold text-center mb-3">Application Management</h3>
                         <p class=" text-sm leading-relaxed mb-2 text-center">
-                            Gain valuable insights into your hiring process with our analytics dashboard. Make data-driven decisions to improve your recruiting
+                            Gain valuable insights into your hiring process with our analytics dashboard. Make
+                            data-driven decisions to improve your recruiting
                         </p>
-                         <a href="#" class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
+                        <a href="#"
+                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
                             Learn more
                             <svg xmlns="http://www.w3.org/2000/svg"
                                 class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
@@ -240,7 +261,7 @@
                             <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
                         </div>
 
-                       
+
                     </div>
                 </div>
             </div>
@@ -327,48 +348,51 @@
 
 
     <!-- comprehensive recruiting start -->
-    <div class="max-w-7xl mx-auto w-full  bg-[#fffbf2]">
+    <div class="  bg-[#fffbf2]">
 
-        <div class="w-[700px]  mx-auto ">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="w-[700px]  mx-auto ">
 
-            <h2
-                class=" pt-10 text-[65px] text-center font-semibold leading-[70px] bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37] text-transparent bg-clip-text  ">
-                A comprehensive
-                recruiting platform
-            </h2>
-            <p class="text-xl text-[#143D4A text-center pt-8">
-                From initial candidate review to final offer, Workable helps you identify and secure top talent
-                efficiently.
-            </p>
-        </div>
-
-        <div class="px-10 flex justify-center items-center gap-10 py-10 ">
-            <!-- Left Column -->
-            <div class="flex flex-col justify-between ">
-                <div class="rounded-3xl bg-white p-10 max-w-[350px] w-full">
-                    <h2 class="text-2xl font-bold">Talent CRM database</h2>
-                    <p class="text-lg mt-3">
-                        Manage your talent pool in one searchable database. Access candidate profiles with all the
-                        information you need. Easily filter, move candidates through stages, and take actions in a few
-                        clicks.
-                    </p>
-                </div>
-                <div class="rounded-3xl bg-white p-10 max-w-[350px] w-full mt-10">
-                    <h2 class="text-2xl font-bold">Evaluation tools</h2>
-                    <p class="text-lg mt-3">
-                        Get access to customizable interview kits, scorecards, and science-backed assessments to
-                        standardize your hiring criteria across every role.
-                    </p>
-                    <a href="" class="flex justify-end items-end mt-10">
-                        <img src="./images/black arrow.png" alt="" class="w-10">
-                    </a>
-                </div>
+                <h2
+                    class=" pt-10 text-[65px] text-center font-semibold leading-[70px] bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37] text-transparent bg-clip-text  ">
+                    A comprehensive
+                    recruiting platform
+                </h2>
+                <p class="text-xl text-[#143D4A text-center pt-8">
+                    From initial candidate review to final offer, Workable helps you identify and secure top talent
+                    efficiently.
+                </p>
             </div>
 
-            <!-- Right Column -->
-            <div>
-                <img src="./images/comprehensive section image.jpg" alt=""
-                    class="w-[800px] h-[700px] object-cover rounded-3xl">
+            <div class="px-10 flex justify-center items-center gap-10 py-10 ">
+                <!-- Left Column -->
+                <div class="flex flex-col justify-between ">
+                    <div class="rounded-3xl bg-white p-10 max-w-[350px] w-full">
+                        <h2 class="text-2xl font-bold">Talent CRM database</h2>
+                        <p class="text-lg mt-3">
+                            Manage your talent pool in one searchable database. Access candidate profiles with all the
+                            information you need. Easily filter, move candidates through stages, and take actions in a
+                            few
+                            clicks.
+                        </p>
+                    </div>
+                    <div class="rounded-3xl bg-white p-10 max-w-[350px] w-full mt-10">
+                        <h2 class="text-2xl font-bold">Evaluation tools</h2>
+                        <p class="text-lg mt-3">
+                            Get access to customizable interview kits, scorecards, and science-backed assessments to
+                            standardize your hiring criteria across every role.
+                        </p>
+                        <a href="" class="flex justify-end items-end mt-10">
+                            <img src="./images/black arrow.png" alt="" class="w-10">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <img src="./images/comprehensive section image.jpg" alt=""
+                        class="w-[800px] h-[700px] object-cover rounded-3xl">
+                </div>
             </div>
         </div>
 
@@ -604,13 +628,11 @@
 
 
     <!-- Last CTA Section start  -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 rounded-2xl shadow-lg overflow-hidden"
-     style="background: linear-gradient(45deg, #26B199, #1a1a37);">
-
-        
+    <div class="relative  px-4 sm:px-6 lg:px-8 py-20  shadow-lg overflow-hidden"
+        style="background: linear-gradient(45deg, #26B199, #1a1a37);">
 
         <!-- Content -->
-        <div class="relative max-w-4xl mx-auto text-center px-4">
+        <div class="relative max-w-7xl mx-auto w-full mx-auto text-center px-4">
             <!-- Headline -->
             <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-md">
                 Transform Your Hiring Process
@@ -643,15 +665,13 @@
             </div>
         </div>
     </div>
-
-
     <!--  close Last CTA Section -->
 
 
     <!-- footer start here -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 bg-gray-200 mt-10">
+    <div class=" px-4 sm:px-6 lg:px-8 py-10 bg-gray-200 ">
 
-        <div class="flex justify-between items-center px-10">
+        <div class="max-w-7xl mx-auto w-full flex justify-between items-center px-10">
             <div class="max-w-lg w-full">
                 <img src="./images/BasicHR_Logo.svg" alt="" class="w-50">
                 <h2 class="text-md my-4">Empowering businesses to streamline recruitment, manage talent, and optimize HR
