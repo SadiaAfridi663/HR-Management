@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Basic HR</title>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -29,105 +29,122 @@
 
 
 <body>
-  <!-- Header -->
-<div class="w-full fixed top-0 right-0 left-0 bg-white shadow-md z-[999]">
-    <header class="flex justify-between items-center py-4 px-6 md:px-12">
-        <!-- Logo -->
-        <div>
-            <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]">
-        </div>
+    <!-- Header -->
+    <div class="w-full fixed top-0 right-0 left-0 bg-white shadow-md z-[999]">
+        <header class="flex justify-between items-center py-4 px-6 md:px-12">
+            <!-- Logo -->
+            <div>
+                <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]">
+            </div>
 
-        <!-- Desktop Nav -->
-        <nav id="desktop-nav" class="hidden lg:flex items-center gap-10 z-50">
-            <a href="#" class="text-[18px] font-medium hover:text-primary transition">Product</a>
-            <a href="#" class="text-[18px] font-medium hover:text-primary transition">Pricing</a>
-        </nav>
+            <!-- Desktop Nav -->
+            <nav id="desktop-nav" class="hidden lg:flex items-center gap-10 z-50">
+                <a href="#" class="text-[18px] font-medium hover:text-primary transition">Product</a>
+                <a href="#" class="text-[18px] font-medium hover:text-primary transition">Pricing</a>
+            </nav>
 
-        <!-- Desktop CTA -->
-        <div id="desktop-cta" class="hidden lg:flex items-center gap-5 z-50">
-            <button class="text-[18px] font-semibold text-secondary hover:text-primary transition">
-                Login
+            <!-- Desktop CTA -->
+            <div id="desktop-cta" class="hidden lg:flex items-center gap-5 z-50">
+                <button class="text-[18px] font-semibold text-secondary hover:text-primary transition">
+                    Login
+                </button>
+                <button
+                    class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                    Request a demo
+                </button>
+                <button
+                    class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                    Request Free Trial
+                </button>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="menu-btn" class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-50">
+                <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
             </button>
-            <button class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
-                Request a demo
-            </button>
-            <button class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
-                Request Free Trial
-            </button>
-        </div>
+        </header>
+    </div>
 
-        <!-- Hamburger -->
-        <button id="menu-btn" class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-50">
-            <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
-            <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
-            <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
-        </button>
-    </header>
-</div>
+    <!-- Overlay -->
+    <div id="overlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 transition-opacity duration-300"></div>
 
-<!-- Overlay -->
-<div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 transition-opacity duration-300"></div>
+    <!-- Mobile Side Menu -->
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 z-[800px]  w-full mt-16 h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden flex flex-col z-56">
+        <div class="flex flex-col p-6 gap-4">
+            <!-- Menu Items -->
+            <nav class="flex flex-col  gap-8">
+                <a href="#"
+                    class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Product</a>
+                <a href="#"
+                    class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Pricing</a>
+            </nav>
 
-<!-- Mobile Side Menu -->
-<div  id="mobile-menu" class="fixed top-0 left-0 z-[800px]  w-full mt-16 h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden flex flex-col z-56">
-    <div class="flex flex-col p-6 gap-4">
-        <!-- Menu Items -->
-        <nav class="flex flex-col  gap-8">
-            <a href="#" class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Product</a>
-            <a href="#" class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Pricing</a>
-        </nav>
-
-        <!-- CTA -->
-        <div class="mt-4 flex flex-col gap-8">
-            <button class="text-[18px] font-semibold text-secondary hover:text-primary transition">Login</button>
-            <div class="flex flex-col gap-2">
-                <button class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
-                Request a demo
-            </button>
-            <button class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
-                Request Free Trial
-            </button>
+            <!-- CTA -->
+            <div class="mt-4 flex flex-col gap-8">
+                <button class="text-[18px] font-semibold text-secondary hover:text-primary transition">Login</button>
+                <div class="flex flex-col gap-2">
+                    <button
+                        class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                        Request a demo
+                    </button>
+                    <button
+                        class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                        Request Free Trial
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-       <!-- hero section -->
-<div class="bg-[#F5F5F5] flex flex-col-reverse lg:flex-row justify-center mt-[70px] pb-6 lg:pb-0 items-center gap-6 lg:gap-10  px-4 sm:px-6 md:px-8 lg:px-10">
-    <!-- Image - Comes first on mobile -->
-    <div class="w-full max-w-md lg:max-w-none lg:w-auto order-1 lg:order-none">
-        <img src="./images/hero image (2).png" alt="Recruiting Solutions Illustration" 
-             class="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] mx-auto lg:mx-0">
-    </div>
+    <!-- hero section -->
+    <div
+        class="bg-[#F5F5F5] flex flex-col-reverse lg:flex-row justify-center mt-[70px] pb-6 lg:pb-0 items-center gap-6 lg:gap-10  px-4 sm:px-6 md:px-8 lg:px-10">
+        <!-- Image - Comes first on mobile -->
+        <div class="w-full max-w-md lg:max-w-none lg:w-auto order-1 lg:order-none  ">
+            <img src="./images/hero image (2).png" alt="Recruiting Solutions Illustration"
+                class="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] mx-auto  lg:mx-0  mt-6 lg:mt-16">
+        </div>
 
-    <!-- Content -->
-    <div class="w-full max-w-2xl flex flex-col items-center lg:items-end text-center">
-        <!-- Headline -->
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold leading-tight sm:leading-snug lg:leading-[70px] px-4 sm:px-6 lg:px-10 bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-transparent bg-clip-text">
-            Moderne Recruiting-Lösungen für Ihr Unternehmen
-        </h2>
-        
-        <!-- Subtitle -->
-        <p class="mt-4 sm:mt-5 text-[#143D4A] text-lg sm:text-xl md:text-2xl lg:text-[24px]">
-            Optimieren Sie Ihre Personalgewinnung mit unserer intuitiven Karriereportal-Software. Einfach, effizient und modern.
-        </p>
+        <!-- Content -->
+        <div class="w-full max-w-2xl  flex flex-col items-center lg:items-end text-center">
+            <!-- Headline -->
+            <h2
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold leading-tight sm:leading-snug lg:leading-[70px] px-4 sm:px-6 lg:px-10 bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-transparent bg-clip-text">
+                Moderne Recruiting-Lösungen für Ihr Unternehmen
+            </h2>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-10 mt-6 sm:mt-8 lg:mt-10">
-            <!-- Demo Button -->
-            <button class="flex justify-center items-center gap-2 sm:gap-3 text-[#143D4A] text-base sm:text-lg lg:text-[18px] px-4 sm:px-6 py-2 sm:py-2 border-2 border-[#143D4A] rounded-md font-medium transition-all duration-300 hover:bg-[#143D4A] hover:text-white hover:shadow-md w-full sm:w-auto">
-                Request a Demo
-                <img src="./images/black arrow.png" alt="Arrow Icon" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
-            </button>
+            <!-- Subtitle -->
+            <p class="mt-4 sm:mt-5 text-[#143D4A] text-lg sm:text-xl md:text-2xl lg:text-[24px]">
+                Optimieren Sie Ihre Personalgewinnung mit unserer intuitiven Karriereportal-Software. Einfach, effizient
+                und modern.
+            </p>
 
-            <!-- Trial Button -->
-            <button class="flex justify-center items-center gap-2 sm:gap-3 text-white text-base sm:text-lg lg:text-[18px] px-4 sm:px-6 py-2 sm:py-2 border-2 border-transparent rounded-md font-medium transition-all duration-300 bg-[#143D4A] hover:bg-[#376D6C] hover:border-[#143D4A] hover:shadow-md w-full sm:w-auto">
-                Request Free Trial
-                <img src="./images/icons8-arrow-100.png" alt="Arrow Icon" class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
-            </button>
+            <!-- CTA Buttons -->
+            <div
+                class="w-full flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-10 mt-6 sm:mt-8 lg:mt-10">
+
+                <!-- Demo Button -->
+                <button
+                    class="flex justify-center items-center gap-2 sm:gap-3 text-[#143D4A] text-base sm:text-lg lg:text-[18px] px-4 sm:px-6 py-2 sm:py-2 border-2 border-[#143D4A] rounded-md font-medium transition-all duration-300 hover:bg-[#143D4A] hover:text-white hover:shadow-md w-full sm:w-auto">
+                    Request a Demo
+                    <img src="./images/black arrow.png" alt="Arrow Icon"
+                        class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
+                </button>
+
+                <!-- Trial Button -->
+                <button
+                    class="flex justify-center items-center gap-2 sm:gap-3 text-white text-base sm:text-lg lg:text-[18px] px-4 sm:px-6 py-2 sm:py-2 border-2 border-transparent rounded-md font-medium transition-all duration-300 bg-[#143D4A] hover:bg-[#376D6C] hover:border-[#143D4A] hover:shadow-md w-full sm:w-auto">
+                    Request Free Trial
+                    <img src="./images/icons8-arrow-100.png" alt="Arrow Icon"
+                        class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- solution section -->
 
@@ -170,106 +187,120 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
+                    class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 ">
+
                     <div class="flex justify-center items-center  bg-[#26B199] ">
                         <img src="./images/Application management.jpg" alt="Employee Compensation"
                             class="w-full h-[160px] object-cover">
                     </div>
-                    <div class="px-6 pt-2 ">
-                        <h3 class="text-2xl font-bold text-center mb-3">Application Management</h3>
-                        <p class=" text-sm leading-relaxed mb-2 text-center">
-                            Track and manage applications with ease. Our system helps you stay organized and never miss
-                            a candidate.
+
+                    <div class="text-center mt-7 px-7">
+                        <h3 class="text-3xl font-bold mb-2 text-gray-800">Recruitment Simplified</h3>
+                        <p class="text-md leading-relaxed mb-6 text-gray-600">
+                            Easily manage every candidate from application to hire. Never miss a great talent with our
+                            intuitive system.
                         </p>
+
+                       <div class="flex flex-col gap-4 mb-8 text-gray-700">
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images//right.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Real-time candidate tracking</span>
+                            </div>
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images/grid.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Customizable workflows</span>
+                            </div>
+                        </div>
+
                         <a href="#"
-                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
-                            Learn more
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
+                            class="inline-flex justify-center items-center gap-3 px-8 py-3 text-lg font-bold text-white rounded-full bg-gradient-to-r from-[#26B199] to-[#147464] shadow-lg hover:from-[#147464] hover:to-[#26B199] transition-all duration-300 transform hover:scale-105">
+                            <span>Start Free Demo</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <div class="pt-2 flex justify-center items-center gap-5 mb-5">
-                            <img src="./images/icons8-twitter.svg" alt="" class="w-10">
-                            <img src="./images/icons8-instagram.svg" alt="" class="w-10">
-                            <img src="./images/icons8-github.svg" alt="" class="w-10">
-                            <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
-                        </div>
-
-
                     </div>
                 </div>
 
                 <!-- Card 2 -->
                 <div
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
-                    <div class="flex justify-center items-center  bg-[#26B199] ">
+                    class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+
+                     <div class="flex justify-center items-center  bg-[#26B199] ">
                         <img src="./images/career card 2.webp" alt="Employee Compensation"
-                            class="w-full h-full object-cover">
+                            class="w-full h-[160px] object-cover">
                     </div>
-                    <div class="px-6 pt-2 ">
-                        <h3 class="text-2xl font-bold text-center mb-3">Career Page</h3>
-                        <p class=" text-sm leading-relaxed mb-2 text-center">
-                            Create a professional careers page for your company. Showcase your job openings and attract
-                            top talent with a modern design.
+
+                    <div class="p-8 text-center">
+                        <h3 class="text-3xl font-bold mb-2 text-gray-800">Build Your Career Page</h3>
+                        <p class="text-md leading-relaxed mb-6 text-gray-600">
+                            Showcase your company culture and attract the best talent with a beautiful, custom-built
+                            career page.
                         </p>
+
+                        <div class="flex flex-col gap-4 mb-8 text-gray-700">
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images//right.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Real-time candidate tracking</span>
+                            </div>
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images/bell.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Manage all job openings</span>
+                            </div>
+                        </div>
+
                         <a href="#"
-                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
-                            Learn more
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
+                            class="inline-flex justify-center items-center gap-3 px-8 py-3 text-lg font-bold text-white rounded-full bg-gradient-to-r from-[#26B199] to-[#147464] shadow-lg hover:from-[#147464] hover:to-[#26B199] transition-all duration-300 transform hover:scale-105">
+                            <span>Create Your Page Now</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <div class="pt-2 flex justify-center items-center gap-5 mb-5">
-                            <img src="./images/icons8-twitter.svg" alt="" class="w-10">
-                            <img src="./images/icons8-instagram.svg" alt="" class="w-10">
-                            <img src="./images/icons8-github.svg" alt="" class="w-10">
-                            <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
-                        </div>
-
-
                     </div>
                 </div>
 
                 <!-- Card 3 -->
                 <div
-                    class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-700">
-                    <div class="flex justify-center items-center  bg-[#26B199] ">
+                    class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+
+                     <div class="flex justify-center items-center  bg-[#26B199] ">
                         <img src="./images/HR analyses.webp" alt="Employee Compensation"
                             class="w-full h-[160px] object-cover">
                     </div>
-                    <div class="px-6 pt-2 ">
-                        <h3 class="text-2xl font-bold text-center mb-3">Application Management</h3>
-                        <p class=" text-sm leading-relaxed mb-2 text-center">
-                            Gain valuable insights into your hiring process with our analytics dashboard. Make
-                            data-driven decisions to improve your recruiting
+
+                    <div class="p-8 text-center">
+                        <h3 class="text-3xl font-bold mb-2 text-gray-800">Optimize Your Hiring</h3>
+                        <p class="text-md leading-relaxed mb-6 text-gray-600">
+                            Our powerful dashboard gives you the insights to make smarter, faster hiring decisions.
                         </p>
+
+                        <div class="flex flex-col gap-4 mb-8 text-gray-700">
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images//right.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Real-time candidate tracking</span>
+                            </div>
+                            <div class="flex items-center gap-3 justify-center">
+                                <img src="./images/grid.png" alt="" class="h-5 w-5">
+                                <span class="text-sm font-medium text-left">Customizable workflows</span>
+                            </div>
+                        </div>
+
                         <a href="#"
-                            class=" flex justify-center items-center  my-3  items-center text-[#26B199] font-medium group">
-                            Learn more
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-5 w-5 ml-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20"
+                            class="inline-flex justify-center items-center gap-3 mt-9 px-8 py-3 text-lg font-bold text-white rounded-full bg-gradient-to-r from-[#26B199] to-[#147464] shadow-lg hover:from-[#147464] hover:to-[#26B199] transition-all duration-300 transform hover:scale-105">
+                            <span>Start Your Free Trial</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <div class="pt-2 flex justify-center items-center gap-5 mb-5">
-                            <img src="./images/icons8-twitter.svg" alt="" class="w-10">
-                            <img src="./images/icons8-instagram.svg" alt="" class="w-10">
-                            <img src="./images/icons8-github.svg" alt="" class="w-10">
-                            <img src="./images/icons8-linkedin.svg" alt="" class="w-10">
-                        </div>
-
-
                     </div>
                 </div>
             </div>
@@ -301,72 +332,83 @@
     </div>
 
 
-   <!-- Business setups start -->
-<div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full">
-    <h2 class="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12">
-        34,000+ businesses, from startups to enterprises
-    </h2>
+    <!-- Business setups start -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full">
+        <h2 class="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12">
+            34,000+ businesses, from startups to enterprises
+        </h2>
 
-    <div class="swiper mySwiper w-full max-w-[1000px] mx-auto px-2">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/american.png" alt="American Express" class="max-w-full max-h-full object-contain">
+        <div class="swiper mySwiper w-full max-w-[1000px] mx-auto px-2">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/american.png" alt="American Express"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/avidbots.png" alt="Avidbots" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/avidbots.png" alt="Avidbots" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/architrave.png" alt="Architrave" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/architrave.png" alt="Architrave"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/ists.webp" alt="ISTS" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/ists.webp" alt="ISTS" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 5 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/energy.png" alt="Energy Company" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/energy.png" alt="Energy Company"
+                            class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 6 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/ansarada.png" alt="Ansarada" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/ansarada.png" alt="Ansarada" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 7 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/lucid.png" alt="Lucid" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/lucid.png" alt="Lucid" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Slide 8 -->
-            <div class="swiper-slide">
-                <div class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
-                    <img src="./images/williaton.png" alt="Williaton" class="max-w-full max-h-full object-contain">
+
+                <!-- Slide 8 -->
+                <div class="swiper-slide">
+                    <div
+                        class="w-full h-24 flex justify-center items-center border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all mx-1">
+                        <img src="./images/williaton.png" alt="Williaton" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <!-- comprehensive recruiting start -->
@@ -436,332 +478,393 @@
             </p>
         </div>
 
-    <!-- Pricing Cards Grid - Preserved your colors while making responsive -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
-        <!-- Card 1 - Starter -->
-        <div class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
-            <div class="px-8 pt-8 pb-6">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Starter Plan</h3>
-                        <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR management</p>
+        <!-- Pricing Cards Grid - Preserved your colors while making responsive -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
+            <!-- Card 1 - Starter -->
+            <div
+                class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
+                <div class="px-8 pt-8 pb-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Starter Plan</h3>
+                            <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR
+                                management</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Free Forever
+                        </span>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        Free Forever
-                    </span>
+
+                    <div class="mt-6 mb-8">
+                        <div class="flex items-end">
+                            <span class="text-5xl font-bold text-gray-900">$0</span>
+                            <span class="text-lg text-gray-500 ml-2">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Up to 5 team members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Basic employee records</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Leave & attendance tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Email support</span>
+                            </li>
+                            <li class="flex items-center justify-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Community access</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="mt-6 mb-8">
-                    <div class="flex items-end">
-                        <span class="text-5xl font-bold text-gray-900">$0</span>
-                        <span class="text-lg text-gray-500 ml-2">/month</span>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Up to 5 team members</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Basic employee records</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Leave & attendance tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Email support</span>
-                        </li>
-                        <li class="flex items-center justify-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Community access</span>
-                        </li>
-                    </ul>
+                <div class="px-8 pb-8">
+                    <button
+                        class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
+                        Get Started
+                        <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
+                    </button>
                 </div>
             </div>
 
-            <div class="px-8 pb-8">
-                <button class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
-                    Get Started
-                    <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
-                </button>
-            </div>
-        </div>
-
-        <!-- Card 2 - Professional -->
-        <div class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
-            <div class="px-8 pt-8 pb-6">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Professional</h3>
-                        <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR management</p>
+            <!-- Card 2 - Professional -->
+            <div
+                class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
+                <div class="px-8 pt-8 pb-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Professional</h3>
+                            <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR
+                                management</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Popular
+                        </span>
                     </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        Popular
-                    </span>
-                </div>
 
-                <div class="mt-6 mb-8">
-                    <div class="flex items-end">
-                        <span class="text-5xl font-bold text-gray-900">$49</span>
-                        <span class="text-lg text-gray-500 ml-2">/month</span>
+                    <div class="mt-6 mb-8">
+                        <div class="flex items-end">
+                            <span class="text-5xl font-bold text-gray-900">$49</span>
+                            <span class="text-lg text-gray-500 ml-2">/month</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="space-y-4">
-                    <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Up to 5 team members</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Basic employee records</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Leave & attendance tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Email support</span>
-                        </li>
-                        <li class="flex items-center justify-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Community access</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="px-8 pb-8">
-                <button class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
-                    Get Started
-                    <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
-                </button>
-            </div>
-        </div>
-
-        <!-- Card 3 - Enterprise -->
-        <div class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
-            <div class="px-8 pt-8 pb-6">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-900">Enterprise</h3>
-                        <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR management</p>
-                    </div>
-                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        Free Forever
-                    </span>
-                </div>
-
-                <div class="mt-6 mb-8">
-                    <div class="flex items-end">
-                        <span class="text-5xl font-bold text-gray-900">$00</span>
-                        <span class="text-lg text-gray-500 ml-2">/month</span>
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Up to 5 team members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Basic employee records</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Leave & attendance tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Email support</span>
+                            </li>
+                            <li class="flex items-center justify-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Community access</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="space-y-4">
-                    <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Up to 5 team members</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Basic employee records</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Leave & attendance tracking</span>
-                        </li>
-                        <li class="flex items-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Email support</span>
-                        </li>
-                        <li class="flex items-center justify-start">
-                            <img src="./images/green tick.png" alt="" class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
-                            <span class="text-gray-700">Community access</span>
-                        </li>
-                    </ul>
+                <div class="px-8 pb-8">
+                    <button
+                        class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
+                        Get Started
+                        <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
+                    </button>
                 </div>
             </div>
 
-            <div class="px-8 pb-8">
-                <button class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
-                    Get Started
-                    <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
-                </button>
+            <!-- Card 3 - Enterprise -->
+            <div
+                class="max-w-sm w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 mx-auto">
+                <div class="px-8 pt-8 pb-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Enterprise</h3>
+                            <p class="text-gray-500 text-sm mt-1">Perfect for small teams getting started with HR
+                                management</p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Free Forever
+                        </span>
+                    </div>
+
+                    <div class="mt-6 mb-8">
+                        <div class="flex items-end">
+                            <span class="text-5xl font-bold text-gray-900">$00</span>
+                            <span class="text-lg text-gray-500 ml-2">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-900 text-lg border-b pb-2">Key Features:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Up to 5 team members</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Basic employee records</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Leave & attendance tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Email support</span>
+                            </li>
+                            <li class="flex items-center justify-start">
+                                <img src="./images/green tick.png" alt=""
+                                    class="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0">
+                                <span class="text-gray-700">Community access</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="px-8 pb-8">
+                    <button
+                        class="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition-all duration-300">
+                        Get Started
+                        <img src="./images/icons8-arrow-100.png" alt="" class="h-5 w-5 ml-2">
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-  <!-- Last CTA Section start -->
-<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 rounded-2xl shadow-lg overflow-hidden"
-     style="background: linear-gradient(45deg, #26B199, #1a1a37);">
-    <!-- Content -->
-    <div class="relative max-w-4xl mx-auto text-center px-4 sm:px-6">
-        <!-- Headline -->
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight sm:leading-tight md:leading-tight mb-4 md:mb-6 drop-shadow-md">
-            Transform Your Hiring Process
-        </h2>
+    <!-- Last CTA Section start -->
+    <div class="relative  px-4 sm:px-6 lg:px-8 py-16 md:py-24  shadow-lg overflow-hidden"
+        style="background: linear-gradient(45deg, #26B199, #1a1a37);">
+        <!-- Content -->
+        <div class="relative max-w-7xl mx-auto w-full text-center px-4 sm:px-6">
+            <!-- Headline -->
+            <h2
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight sm:leading-tight md:leading-tight mb-4 md:mb-6 drop-shadow-md">
+                Transform Your Hiring Process
+            </h2>
 
-        <p class="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
-            Experience our complete platform with a <span class="font-semibold text-white">15-day free trial</span>.
-            No credit card required. Post jobs, hire efficiently, and manage talent seamlessly with our all-in-one
-            solution.
-        </p>
+            <p class="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-10 leading-relaxed max-w-2xl mx-auto">
+                Experience our complete platform with a <span class="font-semibold text-white">15-day free trial</span>.
+                No credit card required. Post jobs, hire efficiently, and manage talent seamlessly with our all-in-one
+                solution.
+            </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
-            <button class="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2 sm:py-3 border-2 border-white text-white font-medium text-base sm:text-lg rounded-lg 
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+                <button class="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2 sm:py-3 border-2 border-white text-white font-medium text-base sm:text-lg rounded-lg 
                    transition-all duration-300 hover:bg-white hover:text-[#143D4A] hover:shadow-lg w-full sm:w-auto">
-                Request a Demo
-                <img src="./images/black arrow.png" alt="Arrow Icon"
-                    class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
-            </button>
+                    Request a Demo
+                    <img src="./images/black arrow.png" alt="Arrow Icon"
+                        class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
+                </button>
 
-            <button class="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2 sm:py-3 bg-white text-[#143D4A] font-medium text-base sm:text-lg rounded-lg 
+                <button class="flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2 sm:py-3 bg-white text-[#143D4A] font-medium text-base sm:text-lg rounded-lg 
                    transition-all duration-300 hover:bg-[#26B199] hover:text-white hover:shadow-lg w-full sm:w-auto">
-                Request Free Trial
-                <img src="./images/icons8-arrow-100.png" alt="Arrow Icon"
-                    class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
-            </button>
-        </div>
-    </div>
-</div>
-<!-- Last CTA Section end -->
-
-
-<!-- Footer Start -->
-<footer class="bg-gray-200 mt-10">
-    <!-- Main Footer Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-0 px-4 sm:px-6 lg:px-10">
-            <!-- Logo and Description -->
-            <div class="max-w-lg w-full">
-                <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40">
-                <p class="text-sm sm:text-base my-4 text-gray-700">
-                    Empowering businesses to streamline recruitment, manage talent, and optimize HR
-                    processes with ease and efficiency.
-                </p>
-                <div class="flex justify-start items-center gap-6 sm:gap-8 mt-6 sm:mt-10">
-                    <img src="./images/icons8-twitter.svg" alt="Twitter" class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
-                    <img src="./images/icons8-github.svg" alt="GitHub" class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
-                    <img src="./images/icons8-instagram.svg" alt="Instagram" class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
-                    <img src="./images/icons8-linkedin.svg" alt="LinkedIn" class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
-                </div>
-            </div>
-
-            <!-- Footer Links -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-[80px] w-full lg:w-auto">
-                <!-- Product Column -->
-                <div>
-                    <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Product</h2>
-                    <ul class="flex flex-col gap-2 sm:gap-3">
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Pricing</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Features</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">AI technology</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Partners</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Security</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources Column -->
-                <div>
-                    <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Resources</h2>
-                    <ul class="flex flex-col gap-2 sm:gap-3">
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Help center</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Resource library</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Developer API</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Search for jobs</a></li>
-                    </ul>
-                </div>
-
-                <!-- Workable Column -->
-                <div>
-                    <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Workable</h2>
-                    <ul class="flex flex-col gap-2 sm:gap-3">
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">About us</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Work with us</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Backstage</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Accessibility</a></li>
-                        <li><a href="#" class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Status</a></li>
-                    </ul>
-                </div>
+                    Request Free Trial
+                    <img src="./images/icons8-arrow-100.png" alt="Arrow Icon"
+                        class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 hover:translate-x-1">
+                </button>
             </div>
         </div>
     </div>
+    <!-- Last CTA Section end -->
 
-    <!-- Copyright Section -->
-    <div class="bg-black px-4 sm:px-6 lg:px-10 py-4">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="text-white text-xs sm:text-sm">© Workable Technology Limited 2012-2025</p>
-            <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-5">
-                <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Privacy Policy</a>
-                <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Terms And Services</a>
-                <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Cookies Settings</a>
+
+    <!-- Footer Start -->
+    <footer class="bg-gray-200 ">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-0 px-4 sm:px-6 lg:px-10">
+                <!-- Logo and Description -->
+                <div class="max-w-lg w-full">
+                    <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40">
+                    <p class="text-sm sm:text-base my-4 text-gray-700">
+                        Empowering businesses to streamline recruitment, manage talent, and optimize HR
+                        processes with ease and efficiency.
+                    </p>
+                    <div class="flex justify-start items-center gap-6 sm:gap-8 mt-6 sm:mt-10">
+                        <img src="./images/icons8-twitter.svg" alt="Twitter"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
+                        <img src="./images/icons8-github.svg" alt="GitHub"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
+                        <img src="./images/icons8-instagram.svg" alt="Instagram"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
+                        <img src="./images/icons8-linkedin.svg" alt="LinkedIn"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity">
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-[80px] w-full lg:w-auto">
+                    <!-- Product Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Product</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Pricing</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">AI
+                                    technology</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Partners</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Security</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Resources</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Help
+                                    center</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Resource
+                                    library</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Developer
+                                    API</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Search
+                                    for jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Workable Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-gray-800">Workable</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">About
+                                    us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Work
+                                    with us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Backstage</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Accessibility</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-gray-600 hover:text-gray-900 transition-colors">Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!-- Footer End -->
+
+        <!-- Copyright Section -->
+        <div class="bg-black px-4 sm:px-6 lg:px-10 py-4">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-white text-xs sm:text-sm">© Workable Technology Limited 2012-2025</p>
+                <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-5">
+                    <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Privacy Policy</a>
+                    <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Terms And
+                        Services</a>
+                    <a href="#" class="text-white text-xs sm:text-sm underline hover:no-underline">Cookies Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
 
 
-<script src="./scripts/logo_slider.js"></script>
-  
-<script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const overlay = document.getElementById('overlay');
-    let isOpen = false;
+    <script src="./scripts/logo_slider.js"></script>
 
-    menuBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+        let isOpen = false;
 
-        // Slide menu
-        mobileMenu.classList.toggle('-translate-x-full');
-        
-        // Show overlay
-        overlay.classList.toggle('hidden');
-        setTimeout(() => {
-            overlay.classList.toggle('opacity-0');
-        }, 10);
+        menuBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
 
-        // Animate hamburger to X
-        const bars = menuBtn.querySelectorAll('span');
-        if (isOpen) {
-            bars[0].classList.add('rotate-45', 'translate-y-[7px]');
-            bars[1].classList.add('opacity-0');
-            bars[2].classList.add('-rotate-45', '-translate-y-[10px]');
-        } else {
+            // Slide menu
+            mobileMenu.classList.toggle('-translate-x-full');
+
+            // Show overlay
+            overlay.classList.toggle('hidden');
+            setTimeout(() => {
+                overlay.classList.toggle('opacity-0');
+            }, 10);
+
+            // Animate hamburger to X
+            const bars = menuBtn.querySelectorAll('span');
+            if (isOpen) {
+                bars[0].classList.add('rotate-45', 'translate-y-[7px]');
+                bars[1].classList.add('opacity-0');
+                bars[2].classList.add('-rotate-45', '-translate-y-[10px]');
+            } else {
+                bars[0].classList.remove('rotate-45', 'translate-y-[7px]');
+                bars[1].classList.remove('opacity-0');
+                bars[2].classList.remove('-rotate-45', '-translate-y-[10px]');
+            }
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+            overlay.classList.add('opacity-0');
+            setTimeout(() => overlay.classList.add('hidden'), 300);
+
+            // Reset hamburger
+            const bars = menuBtn.querySelectorAll('span');
             bars[0].classList.remove('rotate-45', 'translate-y-[7px]');
             bars[1].classList.remove('opacity-0');
-            bars[2].classList.remove('-rotate-45', '-translate-y-[10px]');
-        }
-    });
-
-    overlay.addEventListener('click', () => {
-        mobileMenu.classList.add('-translate-x-full');
-        overlay.classList.add('opacity-0');
-        setTimeout(() => overlay.classList.add('hidden'), 300);
-
-        // Reset hamburger
-        const bars = menuBtn.querySelectorAll('span');
-        bars[0].classList.remove('rotate-45', 'translate-y-[7px]');
-        bars[1].classList.remove('opacity-0');
-        bars[2].classList.remove('-rotate-45', '-translate-y-[7px]');
-        isOpen = false;
-    });
-</script>
+            bars[2].classList.remove('-rotate-45', '-translate-y-[7px]');
+            isOpen = false;
+        });
+    </script>
 
 </body>
 
