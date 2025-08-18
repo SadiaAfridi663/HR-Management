@@ -106,16 +106,17 @@
 
 
     <!-- hero section -->
-    <div class="mt-[80px] max-w-7xl w-full mx-auto   flex justify-evenly   items-end px-4 sm:px-6 lg:px-8 py-12">
+    <div
+        class="mt-[80px] max-w-7xl w-full mx-auto flex flex-col-reverse lg:flex-row justify-evenly items-center lg:items-end px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- Text Content -->
-        <div class="max-w-2xl w-full flex flex-col gap-6 px-10">
+        <div class="max-w-2xl w-full flex flex-col gap-6 px-4 sm:px-6 lg:px-10 text-center lg:text-left mt-10 lg:mt-0">
             <h1
-                class="text-5xl sm:text-6xl md:text-5xl font-bold bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-transparent bg-clip-text leading-tight">
+                class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-transparent bg-clip-text leading-tight">
                 Transform Your Hiring Process
             </h1>
 
-            <h2 class="text-2xl sm:text-2xl md:text-2xl font-semibold text-gray-700">
+            <h2 class="text-xl sm:text-2xl font-semibold text-gray-700">
                 The Complete Recruiting Solution for Modern Companies
             </h2>
 
@@ -126,7 +127,7 @@
                 competitive market.
             </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
                 <a href="#contact"
                     class="bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white font-medium rounded-lg px-6 py-3 text-center hover:opacity-90 transition-opacity shadow-lg">
                     Get Started
@@ -137,7 +138,7 @@
                 </a>
             </div>
 
-            <div class="flex items-center gap-2 pt-4">
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 pt-4">
                 <div class="flex -space-x-2">
                     <img src="https://randomuser.me/api/portraits/women/44.jpg"
                         class="w-10 h-10 rounded-full border-2 border-white" alt="User">
@@ -146,15 +147,15 @@
                     <img src="https://randomuser.me/api/portraits/women/68.jpg"
                         class="w-10 h-10 rounded-full border-2 border-white" alt="User">
                 </div>
-                <p class="text-sm text-gray-500">
+                <p class="text-sm text-gray-500 mt-2 sm:mt-0">
                     Trusted by HR teams at <span class="font-medium text-gray-700">500+ companies</span>
                 </p>
             </div>
         </div>
 
         <!-- Image -->
-        <div class="">
-            <img src="./images/hero image.png" alt="" class="w-[300px]">
+        <div class="flex justify-center lg:justify-end">
+            <img src="./images/hero image.png" alt="" class="w-[220px] sm:w-[260px] md:w-[300px]">
         </div>
 
     </div>
@@ -284,33 +285,39 @@
     <!-- Employers ENDS -->
 
 
-    <!-- Financial and health section start -->
-    <div class="max-w-7xl w-full mx-auto flex justify-evenly items-center px-10 my-10">
-        <div class="max-w-xl w-full px-10">
-            <h2 class="text-4xl font-bold mt-10">Support Your Team with Smarter Health & Financial Benefits</h2>
-            <p class="text-lg mt-6 pr-4">
-                Go beyond paychecks provide your employees with health coverage and financial benefits
-                that keep them secure, motivated, and loyal to your company.
-            </p>
+  <!-- Financial and health section start -->
+<div class="max-w-7xl w-full mx-auto flex flex-col-reverse lg:flex-row justify-evenly items-center px-6 sm:px-10 my-10">
+    
+    <!-- Text Content -->
+    <div class="max-w-xl w-full px-4 sm:px-10 text-center lg:text-left">
+        <h2 class="text-3xl sm:text-4xl font-bold mt-6 lg:mt-10">
+            Support Your Team with Smarter Health & Financial Benefits
+        </h2>
+        <p class="text-base sm:text-lg mt-4 sm:mt-6 lg:pr-4 text-gray-600 leading-relaxed">
+            Go beyond paychecks — provide your employees with health coverage and financial benefits
+            that keep them secure, motivated, and loyal to your company.
+        </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 pt-8">
-                <a href="#contact"
-                    class="bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white font-medium rounded-lg px-6 py-3 text-center hover:opacity-90 transition-opacity shadow-lg">
-                    Get Started
-                </a>
-                <a href="#demo"
-                    class="border-2 border-[#1a1a37] text-[#1a1a37] font-medium rounded-lg px-6 py-3 text-center hover:bg-gray-50 transition-colors">
-                    Request Demo
-                </a>
-            </div>
-        </div>
-
-        <div>
-            <img src="./images/health and financial image.png" alt="Employee Health & Financial Benefits"
-                class="max-w-sm w-full">
+        <div class="flex flex-col sm:flex-row gap-4 pt-6 sm:pt-8 justify-center lg:justify-start">
+            <a href="#contact"
+                class="bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white font-medium rounded-lg px-6 py-3 text-center hover:opacity-90 transition-opacity shadow-lg">
+                Get Started
+            </a>
+            <a href="#demo"
+                class="border-2 border-[#1a1a37] text-[#1a1a37] font-medium rounded-lg px-6 py-3 text-center hover:bg-gray-50 transition-colors">
+                Request Demo
+            </a>
         </div>
     </div>
-    <!-- financial and health section end -->
+
+    <!-- Image -->
+    <div class="flex justify-center lg:justify-end mb-6 lg:mb-0">
+        <img src="./images/health and financial image.png" alt="Employee Health & Financial Benefits"
+            class="max-w-[300px] sm:max-w-sm w-full">
+    </div>
+</div>
+<!-- financial and health section end -->
+
 
 
     <!-- Identity & Access Management -->
@@ -821,17 +828,18 @@
     <!-- pricing section END -->
 
 
-     <!-- CTA Section -->
+    <!-- CTA Section -->
     <section class="py-12 md:py-20 bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              Ready to transform your HR processes?
+                Ready to transform your HR processes?
             </h2>
             <span
                 class="block w-32 rounded-full h-1 bg-primary mx-auto mt-4 mb-8 md:mb-12 bg-gradient-to-l from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
 
             <p class="mt-4 md:mt-6 text-lg md:text-xl max-w-3xl mx-auto">
-                Join thousands of companies using Basic-HR to streamline their hiring process and create professional career sites that attract top talent.
+                Join thousands of companies using Basic-HR to streamline their hiring process and create professional
+                career sites that attract top talent.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <button
@@ -957,7 +965,7 @@
     </footer>
 
 
-     <!-- HAMBURGER JS -->
+    <!-- HAMBURGER JS -->
     <script>
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menu-btn');
