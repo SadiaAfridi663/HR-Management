@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Product</title>
 </head>
 
@@ -23,9 +23,8 @@
             }
         }
     }
-</script>
-
-<body>
+    </script>
+    <body class="bg-secondary/10 font-sans antialiased">
 
     <!-- header -->
     <div>
@@ -161,128 +160,228 @@
     </div>
 
 
-    <!-- Employes -->
-    <div class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-10">
-            <h2 class="text-3xl font-bold text-center text-gray-800">Our Job Services</h2>
-            <p class="text-center text-gray-500 mt-2 mb-10">Everything You Need to Land Your Dream Job</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/job.png" alt="Job Search" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Job Search</h3>
-                    <p class="text-gray-500 text-sm mt-2">Search for the job you need with ease and precision.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/form.png" alt="Apply Online" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Apply Online</h3>
-                    <p class="text-gray-500 text-sm mt-2">Submit your application quickly through our platform.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/application-form.png" alt="Application Assistance"
-                        class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Application Assistance</h3>
-                    <p class="text-gray-500 text-sm mt-2">Get help crafting and submitting your job applications.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/job alert.png" alt="Job Alerts" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Job Alerts</h3>
-                    <p class="text-gray-500 text-sm mt-2">Subscribe for the latest job openings directly to your inbox.
+    <!-- HR Professionals Section -->
+    <section id="hr-section" class="py-12 bg-gradient-to-l from-primary/20 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="flex flex-col lg:flex-row items-center gap-10  ">
+                <!-- Content -->
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-medium mb-6">
+                        <i class="fas fa-users-cog mr-2"></i> For HR Professionals
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Streamline Your HR Processes</h2>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Powerful tools designed specifically for human resources management. Automate workflows, manage employee data, and drive organizational success.
                     </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-bullseye text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Recruitment Automation</h3>
+                                <p class="text-gray-600">Streamline hiring with automated workflows</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-chart-line text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Performance Analytics</h3>
+                                <p class="text-gray-600">Track and measure employee performance</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-file-contract text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Compliance Management</h3>
+                                <p class="text-gray-600">Stay compliant with changing regulations</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-database text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Employee Data Centralization</h3>
+                                <p class="text-gray-600">All employee information in one secure place</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                            Explore HR Tools
+                        </a>
+                        <a href="#" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition text-center">
+                            Request Demo
+                        </a>
+                    </div>
                 </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/profile verification.png" alt="Profile Verification"
-                        class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Profile Verification</h3>
-                    <p class="text-gray-500 text-sm mt-2">We make your profile trusted and employer-ready.</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/interview.png" alt="Get Interviewed" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Get Interviewed</h3>
-                    <p class="text-gray-500 text-sm mt-2">Be shortlisted and interviewed by top companies.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- employ end -->
-
-    <!-- Employers start -->
-    <div class="bg-gray-50 py-12">
-        <div class="max-w-7xl mx-auto px-10">
-            <h2 class="text-3xl font-bold text-center text-gray-800">Our Employer Services</h2>
-            <p class="text-center text-gray-500 mt-2 mb-10">Streamlined Solutions to Find, Hire, and Manage the Right
-                Talent</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/profile verification.png" alt="Job Search" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Profile Verification</h3>
-                    <p class="text-gray-500 text-sm mt-2">We Will Make your Profile Verified</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/search workers.png" alt="Apply Online" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Search Workers</h3>
-                    <p class="text-gray-500 text-sm mt-2">Search For Workers You Need</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/post job.png" alt="Application Assistance" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Post Job</h3>
-                    <p class="text-gray-500 text-sm mt-2">Create Job And Hire Workers</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/shortlist.png" alt="Job Alerts" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">shortlist Workers</h3>
-                    <p class="text-gray-500 text-sm mt-2">Select The Workers That Fits Your Job </p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/job-interview.png" alt="Profile Verification"
-                        class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">interview Workers</h3>
-                    <p class="text-gray-500 text-sm mt-2">Hire Wor through interview</p>
-                </div>
-
-                <!-- Card -->
-                <div
-                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
-                    <img src="./images/easy and fast.png" alt="Get Interviewed" class="w-24 h-24 object-contain mb-4">
-                    <h3 class="text-lg font-semibold text-gray-800">Easy And Fast</h3>
-                    <p class="text-gray-500 text-sm mt-2">Hiring Become Easier</p>
+                
+                <!-- Image/Visual -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="bg-secondary/50 border-2 border-primary rounded-2xl shadow-lg">
+                        <img src="https://sitescdn.wearevennture.co.uk/public/w-talent/mediahub/getty-images-ocn_fxuh81i-unsplash-06c2db9053b74f7f8998929c4ac6ad68.jpg" 
+                             alt="HR Management Dashboard" class="rounded-xl w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Employers ENDS -->
+    </section>
+
+    <!-- Employees Section -->
+    <section id="employees-section" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div class="flex flex-col lg:flex-row-reverse  gap-10 ">
+                <!-- Content -->
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
+                        <i class="fas fa-user-friends mr-2"></i> For Employees
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Empower Your Workforce</h2>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Tools and resources that make work life easier and help employees grow professionally. Access what you need, when you need it.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-user-circle text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Self-Service Portal</h3>
+                                <p class="text-gray-600">Manage your information and requests</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Career Development</h3>
+                                <p class="text-gray-600">Access learning and growth resources</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-calendar-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Time-Off Management</h3>
+                                <p class="text-gray-600">Request and track time off easily</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-heartbeat text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Benefits Enrollment</h3>
+                                <p class="text-gray-600">Manage your health and wellness benefits</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                            Employee Resources
+                        </a>
+                        <a href="#" class="px-6 py-3 border border-secondary text-primary rounded-lg font-medium hover:bg-secondary/5 transition text-center">
+                            View Features
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image/Visual -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="bg-gradient-to-br from-secondary/5 to-primary/5 border-2 border-primary  rounded-2xl shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Employee Collaboration" class="rounded-xl w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employers Section -->
+    <section id="employers-section" class="py-12 bg-gradient-to-l from-primary/20 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-10 ">
+                <!-- Content -->
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
+                        <i class="fas fa-briefcase mr-2"></i> For Employers
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Drive Business Success</h2>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Comprehensive tools for business leaders to manage workforce strategy, make data-driven decisions, and optimize organizational performance.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-chart-pie text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Workforce Analytics</h3>
+                                <p class="text-gray-600">Data-driven insights for better decisions</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-search-dollar text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Budget Planning</h3>
+                                <p class="text-gray-600">Plan and optimize compensation budgets</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-rocket text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Talent Strategy</h3>
+                                <p class="text-gray-600">Attract, retain and develop top talent</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-secondary/10 p-2 rounded-lg mr-4">
+                                <i class="fas fa-chess text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-primary mb-1">Succession Planning</h3>
+                                <p class="text-gray-600">Prepare for future leadership needs</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                            Employer Solutions
+                        </a>
+                        <a href="#" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-[#1a1a37]/5 transition text-center">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image/Visual -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="bg-white rounded-2xl border-2 border-primary shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Business Analytics Dashboard" class="rounded-xl w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
 
 
   <!-- Financial and health section start -->
@@ -1004,6 +1103,7 @@
 
 
     </script>
+
     <!-- // product page slider -->
     <script>
         const track = document.getElementById('slider-track');
