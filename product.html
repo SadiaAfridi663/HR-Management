@@ -1,39 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Splide.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <title>Product</title>
+    <!-- Custom Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#143D4A",
+                        secondary: "#376D6C",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        /* .splide__arrow {
+            background: white !important; 
+            opacity: 0.5 !important;
+           
+        } */
+        .splide__arrow:hover {
+            background: #143D4A !important; 
+            opacity: 1 !important;
+        }
+        .splide__arrow svg {
+  fill: #143D4A !important;
+  opacity: 1 !important;
+}
+
+.splide__arrow:hover svg {
+  fill: white !important;
+}
+
+        .splide__arrow:disabled {
+            opacity: 0.3 !important;
+        }
+        .splide__pagination__page {
+            background: #cbd5e1 !important;
+        }
+        .splide__pagination__page.is-active {
+            background: #143D4A !important; 
+        }
+    </style>
+
+
+
 </head>
 
-<!-- Custom Theme -->
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#143D4A',
-                    secondary: '#376D6C',
-                }
-            }
-        }
-    }
-    </script>
-    <body class="bg-secondary/10 font-sans antialiased">
-
+<body class="bg-secondary/10 font-sans antialiased">
     <!-- header -->
     <div>
-        <div class="header w-full fixed top-0 right-0 left-0 shadow-md z-[999] bg-white ">
+        <div class="header w-full fixed top-0 right-0 left-0 shadow-md z-[999] bg-white">
             <header class="flex justify-between items-center py-6 px-6 md:px-12">
                 <!-- Logo -->
                 <a href="./index.html">
                     <div>
-                        <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]">
+                        <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]" />
                     </div>
                 </a>
 
@@ -74,10 +107,10 @@
 
         <!-- Mobile Side Menu -->
         <div id="mobile-menu"
-            class="fixed top-0 left-0 z-[800px]  w-full mt-[77px] h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden flex flex-col z-56">
+            class="fixed top-0 left-0 z-[800px] w-full mt-[77px] h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden flex flex-col z-56">
             <div class="flex flex-col p-6 gap-4">
                 <!-- Menu Items -->
-                <nav class="flex flex-col  gap-8">
+                <nav class="flex flex-col gap-8">
                     <a href="product.html"
                         class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Product</a>
                     <a href="pricing.html"
@@ -86,8 +119,9 @@
 
                 <!-- CTA -->
                 <div class="mt-4 flex flex-col gap-8">
-                    <button
-                        class="text-[18px] font-semibold text-secondary hover:text-primary transition">Login</button>
+                    <button class="text-[18px] font-semibold text-secondary hover:text-primary transition">
+                        Login
+                    </button>
                     <div class="flex flex-col gap-2">
                         <button
                             class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
@@ -103,11 +137,9 @@
         </div>
     </div>
 
-
     <!-- hero section -->
     <div
         class="mt-[80px] max-w-7xl w-full mx-auto flex flex-col-reverse lg:flex-row justify-evenly items-center lg:items-end px-4 sm:px-6 lg:px-8 py-12">
-
         <!-- Text Content -->
         <div class="max-w-2xl w-full flex flex-col gap-6 px-4 sm:px-6 lg:px-10 text-center lg:text-left mt-10 lg:mt-0">
             <h1
@@ -120,10 +152,10 @@
             </h2>
 
             <p class="text-md text-gray-600 leading-relaxed">
-                Streamline your entire recruiting process—from job posting to hiring with our state-of-the-art career
-                portal.
-                Attract top talent and enhance hiring efficiency with our intuitive platform designed for today's
-                competitive market.
+                Streamline your entire recruiting process—from job posting to hiring
+                with our state-of-the-art career portal. Attract top talent and
+                enhance hiring efficiency with our intuitive platform designed for
+                today's competitive market.
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
@@ -140,48 +172,55 @@
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 pt-4">
                 <div class="flex -space-x-2">
                     <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                        class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        class="w-10 h-10 rounded-full border-2 border-white" alt="User" />
                     <img src="https://randomuser.me/api/portraits/men/32.jpg"
-                        class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        class="w-10 h-10 rounded-full border-2 border-white" alt="User" />
                     <img src="https://randomuser.me/api/portraits/women/68.jpg"
-                        class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        class="w-10 h-10 rounded-full border-2 border-white" alt="User" />
                 </div>
                 <p class="text-sm text-gray-500 mt-2 sm:mt-0">
-                    Trusted by HR teams at <span class="font-medium text-gray-700">500+ companies</span>
+                    Trusted by HR teams at
+                    <span class="font-medium text-gray-700">500+ companies</span>
                 </p>
             </div>
         </div>
 
         <!-- Image -->
         <div class="flex justify-center lg:justify-end">
-            <img src="./images/hero image.png" alt="" class="w-[220px] sm:w-[260px] md:w-[300px]">
+            <img src="./images/hero image.png" alt="" class="w-[220px] sm:w-[260px] md:w-[300px]" />
         </div>
-
     </div>
 
-
-    <!-- HR Professionals Section -->
+  <!-- HR Professionals Section -->
     <section id="hr-section" class="py-12 bg-gradient-to-l from-primary/20 to-secondary/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="flex flex-col lg:flex-row items-center gap-10  ">
+            <div class="flex flex-col lg:flex-row items-center gap-10">
                 <!-- Content -->
                 <div class="lg:w-1/2">
                     <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-medium mb-6">
                         <i class="fas fa-users-cog mr-2"></i> For HR Professionals
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Streamline Your HR Processes</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        Streamline Your HR Processes
+                    </h2>
                     <p class="text-lg text-gray-700 mb-8">
-                        Powerful tools designed specifically for human resources management. Automate workflows, manage employee data, and drive organizational success.
+                        Powerful tools designed specifically for human resources
+                        management. Automate workflows, manage employee data, and drive
+                        organizational success.
                     </p>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="flex items-start">
                             <div class="bg-primary/10 p-2 rounded-lg mr-4">
                                 <i class="fas fa-bullseye text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Recruitment Automation</h3>
-                                <p class="text-gray-600">Streamline hiring with automated workflows</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Recruitment Automation
+                                </h3>
+                                <p class="text-gray-600">
+                                    Streamline hiring with automated workflows
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -189,8 +228,12 @@
                                 <i class="fas fa-chart-line text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Performance Analytics</h3>
-                                <p class="text-gray-600">Track and measure employee performance</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Performance Analytics
+                                </h3>
+                                <p class="text-gray-600">
+                                    Track and measure employee performance
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -198,8 +241,12 @@
                                 <i class="fas fa-file-contract text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Compliance Management</h3>
-                                <p class="text-gray-600">Stay compliant with changing regulations</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Compliance Management
+                                </h3>
+                                <p class="text-gray-600">
+                                    Stay compliant with changing regulations
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -207,27 +254,55 @@
                                 <i class="fas fa-database text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Employee Data Centralization</h3>
-                                <p class="text-gray-600">All employee information in one secure place</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Employee Data Centralization
+                                </h3>
+                                <p class="text-gray-600">
+                                    All employee information in one secure place
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
                             Explore HR Tools
                         </a>
-                        <a href="#" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/5 transition text-center">
                             Request Demo
                         </a>
                     </div>
                 </div>
-                
-                <!-- Image/Visual -->
+
+                <!-- Image/Visual Slider -->
                 <div class="lg:w-1/2 flex justify-center">
-                    <div class="bg-secondary/50 border-2 border-primary rounded-2xl shadow-lg">
-                        <img src="https://sitescdn.wearevennture.co.uk/public/w-talent/mediahub/getty-images-ocn_fxuh81i-unsplash-06c2db9053b74f7f8998929c4ac6ad68.jpg" 
-                             alt="HR Management Dashboard" class="rounded-xl w-full h-full object-cover">
+                    <div class="w-full">
+                        <div class="splide" id="hr-slider">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <div class="bg-secondary/50 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/hr-product-img1.jpg"
+                                                alt="HR Management Dashboard" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-secondary/50 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/hr-product-img2.jfif"
+                                                alt="HR Analytics" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-secondary/50 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/hr-product-img3.avif"
+                                                alt="Team Management" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -237,25 +312,32 @@
     <!-- Employees Section -->
     <section id="employees-section" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="flex flex-col lg:flex-row-reverse  gap-10 ">
+            <div class="flex flex-col lg:flex-row-reverse items-center  gap-10">
                 <!-- Content -->
                 <div class="lg:w-1/2">
                     <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
                         <i class="fas fa-user-friends mr-2"></i> For Employees
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Empower Your Workforce</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        Empower Your Workforce
+                    </h2>
                     <p class="text-lg text-gray-700 mb-8">
-                        Tools and resources that make work life easier and help employees grow professionally. Access what you need, when you need it.
+                        Tools and resources that make work life easier and help employees
+                        grow professionally. Access what you need, when you need it.
                     </p>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
                                 <i class="fas fa-user-circle text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Self-Service Portal</h3>
-                                <p class="text-gray-600">Manage your information and requests</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Self-Service Portal
+                                </h3>
+                                <p class="text-gray-600">
+                                    Manage your information and requests
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -263,8 +345,12 @@
                                 <i class="fas fa-graduation-cap text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Career Development</h3>
-                                <p class="text-gray-600">Access learning and growth resources</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Career Development
+                                </h3>
+                                <p class="text-gray-600">
+                                    Access learning and growth resources
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -272,7 +358,9 @@
                                 <i class="fas fa-calendar-alt text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Time-Off Management</h3>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Time-Off Management
+                                </h3>
                                 <p class="text-gray-600">Request and track time off easily</p>
                             </div>
                         </div>
@@ -281,27 +369,55 @@
                                 <i class="fas fa-heartbeat text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Benefits Enrollment</h3>
-                                <p class="text-gray-600">Manage your health and wellness benefits</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Benefits Enrollment
+                                </h3>
+                                <p class="text-gray-600">
+                                    Manage your health and wellness benefits
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
                             Employee Resources
                         </a>
-                        <a href="#" class="px-6 py-3 border border-secondary text-primary rounded-lg font-medium hover:bg-secondary/5 transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 border border-secondary text-primary rounded-lg font-medium hover:bg-secondary/5 transition text-center">
                             View Features
                         </a>
                     </div>
                 </div>
-                
-                <!-- Image/Visual -->
+
+                <!-- Image/Visual Slider -->
                 <div class="lg:w-1/2 flex justify-center">
-                    <div class="bg-gradient-to-br from-secondary/5 to-primary/5 border-2 border-primary  rounded-2xl shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                             alt="Employee Collaboration" class="rounded-xl w-full h-full object-cover">
+                    <div class="w-full ">
+                        <div class="splide" id="employees-slider">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <div class="bg-gradient-to-br from-secondary/5 to-primary/5 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/emp-product-img2.avif"
+                                                alt="Employee Collaboration" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-gradient-to-br from-secondary/5 to-primary/5 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/emp-product-img1.avif"
+                                                alt="Employee Training" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-gradient-to-br from-secondary/5 to-primary/5 border-2 border-primary rounded-2xl h-full shadow-lg overflow-hidden">
+                                            <img src="./images/emp-product-img3.avif"
+                                                alt="Employee Benefits" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -311,25 +427,33 @@
     <!-- Employers Section -->
     <section id="employers-section" class="py-12 bg-gradient-to-l from-primary/20 to-secondary/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-10 ">
+            <div class="flex flex-col lg:flex-row items-center gap-10">
                 <!-- Content -->
                 <div class="lg:w-1/2">
                     <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
                         <i class="fas fa-briefcase mr-2"></i> For Employers
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Drive Business Success</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
+                        Drive Business Success
+                    </h2>
                     <p class="text-lg text-gray-700 mb-8">
-                        Comprehensive tools for business leaders to manage workforce strategy, make data-driven decisions, and optimize organizational performance.
+                        Comprehensive tools for business leaders to manage workforce
+                        strategy, make data-driven decisions, and optimize organizational
+                        performance.
                     </p>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
                                 <i class="fas fa-chart-pie text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Workforce Analytics</h3>
-                                <p class="text-gray-600">Data-driven insights for better decisions</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Workforce Analytics
+                                </h3>
+                                <p class="text-gray-600">
+                                    Data-driven insights for better decisions
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -337,8 +461,12 @@
                                 <i class="fas fa-search-dollar text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Budget Planning</h3>
-                                <p class="text-gray-600">Plan and optimize compensation budgets</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Budget Planning
+                                </h3>
+                                <p class="text-gray-600">
+                                    Plan and optimize compensation budgets
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -346,8 +474,12 @@
                                 <i class="fas fa-rocket text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Talent Strategy</h3>
-                                <p class="text-gray-600">Attract, retain and develop top talent</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Talent Strategy
+                                </h3>
+                                <p class="text-gray-600">
+                                    Attract, retain and develop top talent
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -355,77 +487,73 @@
                                 <i class="fas fa-chess text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">Succession Planning</h3>
-                                <p class="text-gray-600">Prepare for future leadership needs</p>
+                                <h3 class="font-semibold text-primary mb-1">
+                                    Succession Planning
+                                </h3>
+                                <p class="text-gray-600">
+                                    Prepare for future leadership needs
+                                </p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
                             Employer Solutions
                         </a>
-                        <a href="#" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-[#1a1a37]/5 transition text-center">
+                        <a href="#"
+                            class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-[#1a1a37]/5 transition text-center">
                             Contact Sales
                         </a>
                     </div>
                 </div>
-                
-                <!-- Image/Visual -->
+
+                <!-- Image/Visual Slider -->
                 <div class="lg:w-1/2 flex justify-center">
-                    <div class="bg-white rounded-2xl border-2 border-primary shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" 
-                             alt="Business Analytics Dashboard" class="rounded-xl w-full h-full object-cover">
+                    <div class="w-full">
+                        <div class="splide" id="employers-slider">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
+                                            <img src="./images/employer-product-img1.jfif"
+                                                alt="Business Analytics Dashboard" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
+                                            <img src="./images/employer-product-img2.jfif"
+                                                alt="Business Strategy" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                    <li class="splide__slide">
+                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
+                                            <img src="./images/employer-product-img3.jfif"
+                                                alt="Business Growth" class="w-full h-full object-cover" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-   
 
-
-  <!-- Financial and health section start -->
-<div class="max-w-7xl w-full mx-auto flex flex-col-reverse lg:flex-row justify-evenly items-center px-6 sm:px-10 my-10">
-    
-    <!-- Text Content -->
-    <div class="max-w-xl w-full px-4 sm:px-10 text-center lg:text-left">
-        <h2 class="text-3xl sm:text-4xl font-bold mt-6 lg:mt-10">
-            Support Your Team with Smarter Health & Financial Benefits
-        </h2>
-        <p class="text-base sm:text-lg mt-4 sm:mt-6 lg:pr-4 text-gray-600 leading-relaxed">
-            Go beyond paychecks — provide your employees with health coverage and financial benefits
-            that keep them secure, motivated, and loyal to your company.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 pt-6 sm:pt-8 justify-center lg:justify-start">
-            <a href="#contact"
-                class="bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white font-medium rounded-lg px-6 py-3 text-center hover:opacity-90 transition-opacity shadow-lg">
-                Get Started
-            </a>
-            <a href="#demo"
-                class="border-2 border-[#1a1a37] text-[#1a1a37] font-medium rounded-lg px-6 py-3 text-center hover:bg-gray-50 transition-colors">
-                Request Demo
-            </a>
-        </div>
-    </div>
-
-    <!-- Image -->
-    <div class="flex justify-center lg:justify-end mb-6 lg:mb-0">
-        <img src="./images/health and financial image.png" alt="Employee Health & Financial Benefits"
-            class="max-w-[300px] sm:max-w-sm w-full">
-    </div>
-</div>
-<!-- financial and health section end -->
-
-
+ 
 
     <!-- Identity & Access Management -->
     <div
-        class="max-w-6xl w-full mx-auto rounded-2xl   bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37] overflow-hidden my-10 ">
-
-        <div class="max-w-2xl w-full mx-auto text-white my-10  ">
-            <h2 class="text-md font-semibold text-center mt-14">Identity & Access Management</h2>
-            <h2 class="text-[50px] font-semibold text-center ">Get access right, every time</h2>
+        class="max-w-6xl w-full mx-auto rounded-2xl bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37] overflow-hidden my-10">
+        <div class="max-w-2xl w-full mx-auto text-white my-10">
+            <h2 class="text-md font-semibold text-center mt-14">
+                Identity & Access Management
+            </h2>
+            <h2 class="text-[50px] font-semibold text-center">
+                Get access right, every time
+            </h2>
             <p class="mt-2 text-md text-center px-10">
                 Automatically grant the right people the right level of access to
                 third-party applications right when they need them.
@@ -444,75 +572,67 @@
             </div>
         </div>
 
-
         <!-- cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10 ">
-
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-10">
             <div class="max-w-[350px] mx-auto w-full px-5 py-4 text-white border bg-[#26B199] shadow-lg rounded-2xl">
-
                 <div>
-                    <img src="./images/thunder.png" alt="" class="w-20 my-5">
+                    <img src="./images/thunder.png" alt="" class="w-20 my-5" />
                 </div>
                 <h2 class="text-2xl font-semibold">Efficient</h2>
-                <p class="text-md text-light">Automatically provision and deprovision accounts from onboarding to
+                <p class="text-md text-light">
+                    Automatically provision and deprovision accounts from onboarding to
                     offboarding.
                 </p>
             </div>
 
-
             <div class="max-w-[350px] mx-auto w-full px-5 py-4 text-white border bg-[#26B199] shadow-lg rounded-2xl">
-
                 <div>
-                    <img src="./images/lock.png" alt="" class="w-20 my-5">
+                    <img src="./images/lock.png" alt="" class="w-20 my-5" />
                 </div>
                 <h2 class="text-2xl font-semibold">Secure</h2>
-                <p class="text-md text-light">Deploy SSO and RPass so your people don’t need to remember complicated
-                    passwords.
+                <p class="text-md text-light">
+                    Deploy SSO and RPass so your people don’t need to remember
+                    complicated passwords.
                 </p>
             </div>
-
-
 
             <div class="max-w-[350px] mx-auto w-full px-5 py-4 text-white border bg-[#26B199] shadow-lg rounded-2xl">
-
                 <div>
-                    <img src="./images/group-dynamics.png" alt="" class="w-20 my-5">
+                    <img src="./images/group-dynamics.png" alt="" class="w-20 my-5" />
                 </div>
                 <h2 class="text-2xl font-semibold">Dynamic</h2>
-                <p class="text-md text-light">Leverage hundreds of user attributes to automatically manage user groups
-                    within your apps.
+                <p class="text-md text-light">
+                    Leverage hundreds of user attributes to automatically manage user
+                    groups within your apps.
                 </p>
             </div>
-
-
-
-
         </div>
         <!-- cards end -->
-
 
         <!-- Slider start -->
         <div class="my-[150px] max-w-7xl w-full mx-auto relative">
             <!-- Slider Wrapper -->
             <div id="slider" class="overflow-hidden relative">
                 <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
-
                     <!-- slide 1 -->
                     <div class="w-full flex-shrink-0 px-4">
                         <div class="max-w-4xl mx-auto flex flex-col justify-center items-center">
-                            <img src="./images/reserve.png" alt="" class="w-[160px]">
+                            <img src="./images/reserve.png" alt="" class="w-[160px]" />
                             <div>
                                 <h2 class="text-2xl font-semibold text-white text-center">
-                                    "Rippling's pre-built integrations made it painless to integrate third-party apps
-                                    and
-                                    set up SSO for our SOC 2 report. Instead of getting bogged down in busy-work, our
-                                    engineers are
-                                    able to focus on projects for the core business."
+                                    "Rippling's pre-built integrations made it painless to
+                                    integrate third-party apps and set up SSO for our SOC 2
+                                    report. Instead of getting bogged down in busy-work, our
+                                    engineers are able to focus on projects for the core
+                                    business."
                                 </h2>
                                 <div class="flex justify-center items-center gap-1 mt-5">
-                                    <h2 class="text-sm font-semibold text-white text-center">Nick Stanish,</h2>
-                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">Founding
-                                        Engineer at Reserv</h2>
+                                    <h2 class="text-sm font-semibold text-white text-center">
+                                        Nick Stanish,
+                                    </h2>
+                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">
+                                        Founding Engineer at Reserv
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -521,18 +641,21 @@
                     <!-- slide 2 -->
                     <div class="w-full flex-shrink-0 px-4">
                         <div class="max-w-4xl mx-auto flex flex-col justify-center items-center">
-                            <img src="./images/frogslayer.png" alt="" class="w-[160px]">
+                            <img src="./images/frogslayer.png" alt="" class="w-[160px]" />
                             <div>
                                 <h2 class="text-2xl font-semibold text-white text-center">
-                                    "Each time we roll out new software, I am impressed by how easy Rippling makes the
-                                    integration process. Rippling is constantly improving and releasing new features
-                                    each
-                                    month, and I'm always looking forward to the next innovation."
+                                    "Each time we roll out new software, I am impressed by how
+                                    easy Rippling makes the integration process. Rippling is
+                                    constantly improving and releasing new features each month,
+                                    and I'm always looking forward to the next innovation."
                                 </h2>
                                 <div class="flex justify-center items-center gap-1 mt-5">
-                                    <h2 class="text-sm font-semibold text-white text-center">Brian Cahill,</h2>
-                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">Head of IT at
-                                        Frogslayer</h2>
+                                    <h2 class="text-sm font-semibold text-white text-center">
+                                        Brian Cahill,
+                                    </h2>
+                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">
+                                        Head of IT at Frogslayer
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -541,23 +664,25 @@
                     <!-- slide 3 -->
                     <div class="w-full flex-shrink-0 px-4">
                         <div class="max-w-4xl mx-auto flex flex-col justify-center items-center">
-                            <img src="./images/hignoon.png" alt="" class="w-[120px]">
+                            <img src="./images/hignoon.png" alt="" class="w-[120px]" />
                             <div>
                                 <h2 class="text-2xl font-semibold text-white text-center">
-                                    "Each time we roll out new software, I am impressed by how easy Rippling makes the
-                                    integration process. Rippling is constantly improving and releasing new features
-                                    each
-                                    month, and I'm always looking forward to the next innovation."
+                                    "Each time we roll out new software, I am impressed by how
+                                    easy Rippling makes the integration process. Rippling is
+                                    constantly improving and releasing new features each month,
+                                    and I'm always looking forward to the next innovation."
                                 </h2>
                                 <div class="flex justify-center items-center gap-1 mt-5">
-                                    <h2 class="text-sm font-semibold text-white text-center">Brian Cahill,</h2>
-                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">Head of IT at
-                                        Frogslayer</h2>
+                                    <h2 class="text-sm font-semibold text-white text-center">
+                                        Brian Cahill,
+                                    </h2>
+                                    <h2 class="text-sm font-semibold text-white text-center opacity-60">
+                                        Head of IT at Frogslayer
+                                    </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -573,35 +698,36 @@
                 ❯
             </button>
         </div>
-
-
     </div>
 
     <!-- Workforce plateform start -->
-    <div class="my-10 py-10" style="background:linear-gradient(180deg, #F9F9F9 0%, #FDF1DE 100%)">
-        <div class=" py-8">
-            <h2 class="text-5xl font-semibold text-center">The Workforce Platform</h2>
+    <div class="my-10 py-10" style="background: linear-gradient(180deg, #f9f9f9 0%, #fdf1de 100%)">
+        <div class="py-8">
+            <h2 class="text-5xl font-semibold text-center">
+                The Workforce Platform
+            </h2>
         </div>
 
         <div
-            class="max-w-6xl mx-auto w-full bg-white  rounded-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10  gap-8 mb-16">
-
+            class="max-w-6xl mx-auto w-full bg-white rounded-sm grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 gap-8 mb-16">
             <!-- grid 1 -->
             <div class="max-w-sm w-full items-center mt-10">
-                <img src="./images/BasicHR_Logo.svg" alt="Rippling Platform" class="w-[150px]">
+                <img src="./images/BasicHR_Logo.svg" alt="Rippling Platform" class="w-[150px]" />
                 <div class="mt-2">
-                    <h2 class="text-3xl font-semibold text-gray-800">Rippling Platform</h2>
+                    <h2 class="text-3xl font-semibold text-gray-800">
+                        Rippling Platform
+                    </h2>
                     <p class="text-md text-gray-600 mt-3 leading-relaxed">
                         Manage and automate all your workforce operations in one place -
                         onboarding, offboarding and everything in between.
                     </p>
                 </div>
                 <!-- Button Wrapper -->
-                <div class="flex ">
+                <div class="flex">
                     <a href="#" class="group inline-block">
                         <h2 class="mt-8 relative inline-block text-lg font-semibold flex gap-2">
                             Learn More
-                            <img src="./images/black arrow.png" alt="" class="w-8">
+                            <img src="./images/black arrow.png" alt="" class="w-8" />
                             <span
                                 class="absolute left-1/2 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full transform -translate-x-1/2">
                             </span>
@@ -613,32 +739,32 @@
             <!-- grid 2 -->
             <div class="space-y-4">
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Unified Workforce Directory</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Global Workforce Analytics & Dashboards</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Onboarding/Offboarding Automation</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Advanced Admin & Field Privileges</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Remuneration Bands</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Rippling Mobile App</span>
                 </div>
             </div>
@@ -646,32 +772,32 @@
             <!-- grid 3 -->
             <div class="space-y-4">
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Workflow Studio</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Advanced Policy Management</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Dynamic Permissions & Approvals Management</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Advanced Document Management</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Compliance 360</span>
                 </div>
 
                 <div class="flex items-center gap-3 border-b border-gray-200 pb-3 h-[48px]">
-                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0">
+                    <img src="./images/right (2).png" alt="" class="w-5 h-5 flex-shrink-0" />
                     <span class="text-gray-700">Holiday and Leave Management</span>
                 </div>
             </div>
@@ -688,12 +814,8 @@
                 </a>
             </div>
         </div>
-
-
-
     </div>
     <!-- workforce plateform END -->
-
 
     <!-- Pricing Section -->
     <section class="py-12 md:py-16 bg-white">
@@ -707,19 +829,21 @@
                     class="block w-32 rounded-full h-1 bg-primary mx-auto mt-4 mb-8 md:mb-12 bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
 
                 <p class="mt-4 md:mt-6 text-lg md:text-xl text-[#143D4A]">
-                    We offer a flexible pricing model to suit your needs. Start with our free plan and expand as your
-                    business grows.
+                    We offer a flexible pricing model to suit your needs. Start with our
+                    free plan and expand as your business grows.
                 </p>
             </div>
 
             <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Pricing Card 1 -->
                 <div
-                    class="bg-secondary/5 rounded-xl shadow-md overflow-hidden border  hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3">
+                    class="bg-secondary/5 rounded-xl shadow-md overflow-hidden border hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3">
                     <div class="p-6 md:p-8">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-primary">Starter Plan</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">
+                                    Starter Plan
+                                </h3>
                                 <p class="text-gray-500 mt-1">Perfect for small teams</p>
                             </div>
                             <span
@@ -734,7 +858,9 @@
                             </div>
                         </div>
                         <div class="mt-6 space-y-4">
-                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">Key Features:</h4>
+                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">
+                                Key Features:
+                            </h4>
                             <ul class="space-y-3">
                                 <li class="flex items-center">
                                     <svg class="w-6 h-6 mt-0.5 mr-2 text-secondary" fill="none" stroke="currentColor"
@@ -775,18 +901,20 @@
                         <button
                             class="w-full flex justify-center items-center gap-2 px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-teal-500 to-teal-700 hover:from-teal-600 hover:to-teal-800 transition">
                             Get Started
-                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5">
+                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5" />
                         </button>
                     </div>
                 </div>
 
                 <!-- Pricing Card 2 -->
                 <div
-                    class="bg-secondary/5 rounded-xl shadow-lg overflow-hidden border  hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3">
+                    class="bg-secondary/5 rounded-xl shadow-lg overflow-hidden border hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3">
                     <div class="p-6 md:p-8">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-primary">Professional</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">
+                                    Professional
+                                </h3>
                                 <p class="text-gray-500 mt-1">For growing businesses</p>
                             </div>
                             <span
@@ -796,12 +924,14 @@
                         </div>
                         <div class="mt-6">
                             <div class="flex items-end">
-                                <span class=" text-2xl font-bold text-primary">$10</span>
+                                <span class="text-2xl font-bold text-primary">$10</span>
                                 <span class="text-lg text-gray-500 ml-2">/month</span>
                             </div>
                         </div>
                         <div class="mt-6 space-y-4">
-                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">Key Features:</h4>
+                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">
+                                Key Features:
+                            </h4>
                             <ul class="space-y-3">
                                 <li class="flex items-center">
                                     <svg class="w-6 h-6 mt-0.5 mr-2 text-secondary" fill="none" stroke="currentColor"
@@ -842,7 +972,7 @@
                         <button
                             class="w-full flex justify-center items-center gap-2 px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-teal-600 to-teal-800 hover:from-teal-700 hover:to-teal-900 transition">
                             Get Started
-                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5">
+                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5" />
                         </button>
                     </div>
                 </div>
@@ -853,7 +983,9 @@
                     <div class="p-6 md:p-8">
                         <div class="flex justify-between items-start">
                             <div>
-                                <h3 class="text-xl md:text-2xl font-bold text-primary">Enterprise</h3>
+                                <h3 class="text-xl md:text-2xl font-bold text-primary">
+                                    Enterprise
+                                </h3>
                                 <p class="text-gray-500 mt-1">For large organizations</p>
                             </div>
                             <span
@@ -868,7 +1000,9 @@
                             </div>
                         </div>
                         <div class="mt-6 space-y-4">
-                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">Key Features:</h4>
+                            <h4 class="font-semibold text-lg border-b pb-2 text-primary">
+                                Key Features:
+                            </h4>
                             <ul class="space-y-3">
                                 <li class="flex items-center">
                                     <svg class="w-6 h-6 mt-0.5 mr-2 text-secondary" fill="none" stroke="currentColor"
@@ -917,7 +1051,7 @@
                         <button
                             class="w-full flex justify-center items-center gap-2 px-6 py-3 rounded-md text-white font-medium bg-gradient-to-r from-teal-600 to-teal-800 hover:from-teal-700 hover:to-teal-900 transition">
                             contact sales
-                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5">
+                            <img src="./images/icons8-arrow-100.png" alt="" class="w-5 h-5" />
                         </button>
                     </div>
                 </div>
@@ -925,7 +1059,6 @@
         </div>
     </section>
     <!-- pricing section END -->
-
 
     <!-- CTA Section -->
     <section class="py-12 md:py-20 bg-gradient-to-r from-[#26B199] to-[#1a1a37] text-white">
@@ -937,8 +1070,8 @@
                 class="block w-32 rounded-full h-1 bg-primary mx-auto mt-4 mb-8 md:mb-12 bg-gradient-to-l from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
 
             <p class="mt-4 md:mt-6 text-lg md:text-xl max-w-3xl mx-auto">
-                Join thousands of companies using Basic-HR to streamline their hiring process and create professional
-                career sites that attract top talent.
+                Join thousands of companies using Basic-HR to streamline their hiring
+                process and create professional career sites that attract top talent.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <button
@@ -954,29 +1087,29 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-secondary/10 pt-12 ">
+    <footer class="bg-secondary/10 pt-12">
         <!-- Main Footer Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-0 px-4 sm:px-6 lg:px-10">
                 <!-- Logo and Description -->
                 <div class="max-w-lg w-full">
-                    <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40">
+                    <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40" />
                     <span
-                        class="block ml-2  w-[145px] rounded-full h-[2px] bg-primary bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
+                        class="block ml-2 w-[145px] rounded-full h-[2px] bg-primary bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
 
                     <p class="text-sm sm:text-base my-4 text-primary">
-                        Empowering businesses to streamline recruitment, manage talent, and optimize HR
-                        processes with ease and efficiency.
+                        Empowering businesses to streamline recruitment, manage talent,
+                        and optimize HR processes with ease and efficiency.
                     </p>
                     <div class="flex justify-start items-center gap-6 sm:gap-8 mt-6 sm:mt-10">
                         <img src="./images/icons8-twitter.svg" alt="Twitter"
-                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity" />
                         <img src="./images/icons8-github.svg" alt="GitHub"
-                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity" />
                         <img src="./images/icons8-instagram.svg" alt="Instagram"
-                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity" />
                         <img src="./images/icons8-linkedin.svg" alt="LinkedIn"
-                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity" />
                     </div>
                 </div>
 
@@ -984,21 +1117,29 @@
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-[80px] w-full lg:w-auto">
                     <!-- Product Column -->
                     <div>
-                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Product</h2>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">
+                            Product
+                        </h2>
                         <ul class="flex flex-col gap-2 sm:gap-3">
-                            <li><a href="pricing.html"
+                            <li>
+                                <a href="pricing.html"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Pricing</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Features</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">AI
-                                    technology</a></li>
-                            <li><a href="#"
+                                    technology</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Partners</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Security</a>
                             </li>
                         </ul>
@@ -1006,40 +1147,59 @@
 
                     <!-- Resources Column -->
                     <div>
-                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Resources</h2>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">
+                            Resources
+                        </h2>
                         <ul class="flex flex-col gap-2 sm:gap-3">
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Help
-                                    center</a></li>
-                            <li><a href="#"
+                                    center</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Resource
-                                    library</a></li>
-                            <li><a href="#"
+                                    library</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Developer
-                                    API</a></li>
-                            <li><a href="#"
+                                    API</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Search
-                                    for jobs</a></li>
+                                    for jobs</a>
+                            </li>
                         </ul>
                     </div>
 
                     <!-- Workable Column -->
                     <div>
-                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Workable</h2>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">
+                            Workable
+                        </h2>
                         <ul class="flex flex-col gap-2 sm:gap-3">
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">About
-                                    us</a></li>
-                            <li><a href="#"
+                                    us</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Work
-                                    with us</a></li>
-                            <li><a href="#"
+                                    with us</a>
+                            </li>
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Backstage</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Accessibility</a>
                             </li>
-                            <li><a href="#"
+                            <li>
+                                <a href="#"
                                     class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Status</a>
                             </li>
                         </ul>
@@ -1049,14 +1209,17 @@
         </div>
 
         <!-- Copyright Section -->
-        <div class=" px-4 sm:px-6 lg:px-[77px] py-4 border-t border-gray-200">
+        <div class="px-4 sm:px-6 lg:px-[77px] py-4 border-t border-gray-200">
             <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class=" text-xs sm:text-sm text-primary">© Workable Technology Limited 2012-2025</p>
+                <p class="text-xs sm:text-sm text-primary">
+                    © Workable Technology Limited 2012-2025
+                </p>
                 <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-5">
-                    <a href="./Privacy_Policy.html" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Privacy Policy</a>
-                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Terms And
+                    <a href="./Privacy_Policy.html"
+                        class="text-xs sm:text-sm underline hover:no-underline text-primary">Privacy Policy</a>
+                    <a href="#" class="text-xs sm:text-sm underline hover:no-underline text-primary">Terms And
                         Services</a>
-                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Cookies
+                    <a href="#" class="text-xs sm:text-sm underline hover:no-underline text-primary">Cookies
                         Settings</a>
                 </div>
             </div>
@@ -1064,52 +1227,90 @@
     </footer>
 
 
+   <!-- Splide.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize HR Professionals slider
+            new Splide('#hr-slider', {
+                type: 'loop',
+                autoplay: true,
+                interval: 3000,
+                pauseOnHover: false,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+            }).mount();
+            
+            // Initialize Employees slider
+            new Splide('#employees-slider', {
+                type: 'loop',
+                autoplay: true,
+                interval: 3500,
+                pauseOnHover: false,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+            }).mount();
+            
+            // Initialize Employers slider
+            new Splide('#employers-slider', {
+                type: 'loop',
+                autoplay: true,
+                interval: 3200,
+                pauseOnHover: false,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+            }).mount();
+        });
+    </script>
+
+
     <!-- HAMBURGER JS -->
     <script>
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const header = document.querySelector('.header')
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const header = document.querySelector(".header");
 
-
-        menuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('translate-x-0');
+        menuBtn.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.contains("translate-x-0");
 
             if (isOpen) {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('-translate-x-full');
-                header.classList.add("shadow-md")
-                header.classList.remove("shadow-none")
-
+                mobileMenu.classList.remove("translate-x-0");
+                mobileMenu.classList.add("-translate-x-full");
+                header.classList.add("shadow-md");
+                header.classList.remove("shadow-none");
             } else {
-                mobileMenu.classList.remove('-translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-                header.classList.remove("shadow-md")
-                header.classList.add("shadow-none")
+                mobileMenu.classList.remove("-translate-x-full");
+                mobileMenu.classList.add("translate-x-0");
+                header.classList.remove("shadow-md");
+                header.classList.add("shadow-none");
             }
 
             // Animate hamburger icon
-            menuBtn.querySelectorAll('span').forEach((span, index) => {
+            menuBtn.querySelectorAll("span").forEach((span, index) => {
                 if (!isOpen) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
+                    if (index === 0)
+                        span.style.transform = "rotate(45deg) translate(5px, 7px)";
+                    if (index === 1) span.style.opacity = "0";
+                    if (index === 2)
+                        span.style.transform = "rotate(-45deg) translate(5px, -7px)";
                 } else {
-                    span.style.transform = '';
-                    span.style.opacity = '';
+                    span.style.transform = "";
+                    span.style.opacity = "";
                 }
             });
         });
-
-
     </script>
 
-    <!-- // product page slider -->
+    <!-- product page slider -->
     <script>
-        const track = document.getElementById('slider-track');
-        const slides = document.querySelectorAll('#slider-track > div');
-        const prev = document.getElementById('prev');
-        const next = document.getElementById('next');
+        const track = document.getElementById("slider-track");
+        const slides = document.querySelectorAll("#slider-track > div");
+        const prev = document.getElementById("prev");
+        const next = document.getElementById("next");
         let index = 0;
         const slideCount = slides.length;
 
@@ -1117,12 +1318,12 @@
             track.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        next.addEventListener('click', () => {
+        next.addEventListener("click", () => {
             index = (index + 1) % slideCount;
             updateSlider();
         });
 
-        prev.addEventListener('click', () => {
+        prev.addEventListener("click", () => {
             index = (index - 1 + slideCount) % slideCount;
             updateSlider();
         });
@@ -1130,7 +1331,6 @@
         // Initialize
         updateSlider();
     </script>
-
 </body>
 
 </html>
