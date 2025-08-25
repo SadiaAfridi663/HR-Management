@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Employees - Basic HR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#143D4A',
+                        secondary: '#376D6C',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<style>
+    @keyframes blob {
+        0% {
+            transform: translate(0px, 0px) scale(1);
+        }
+
+        33% {
+            transform: translate(30px, -50px) scale(1.1);
+        }
+
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+
+        100% {
+            transform: translate(0px, 0px) scale(1);
+        }
+    }
+
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+</style>
+
+<body class="bg-gray-50">
+
+    <!-- Header-->
+    <div>
+        <div class="header w-full fixed top-0 right-0 left-0 shadow-md z-[999] bg-white ">
+            <header class="flex justify-between items-center py-6 px-6 md:px-12">
+                <!-- Logo -->
+                <a href="./index.html">
+                    <div>
+                        <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]">
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav id="desktop-nav" class="hidden lg:flex items-center gap-10 z-50">
+                    <a href="product.html" class="text-[18px] font-medium hover:text-primary transition">Product</a>
+                    <a href="pricing.html" class="text-[18px] font-medium hover:text-primary transition">Pricing</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div id="desktop-cta" class="hidden lg:flex items-center gap-5 z-50">
+                    <button class="text-[18px] font-semibold text-primary hover:text-primary transition">
+                        Login
+                    </button>
+                    <button
+                        class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                        Request a demo
+                    </button>
+                    <button
+                        class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                        Request Free Trial
+                    </button>
+                </div>
+
+                <!-- Hamburger -->
+                <button id="menu-btn" class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-50">
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                </button>
+            </header>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay"
+            class="hidden fixed inset-0 bg-secondary/10 bg-opacity-50 z-40 opacity-0 transition-opacity duration-300">
+        </div>
+
+        <!-- Mobile Side Menu -->
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 z-[800px]  w-full mt-[77px] h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden flex flex-col z-56">
+            <div class="flex flex-col p-6 gap-4">
+                <!-- Menu Items -->
+                <nav class="flex flex-col  gap-8">
+                    <a href="product.html"
+                        class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Product</a>
+                    <a href="pricing.html"
+                        class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Pricing</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="mt-4 flex flex-col gap-8">
+                    <button
+                        class="text-[18px] font-semibold text-secondary hover:text-primary transition">Login</button>
+                    <div class="flex flex-col gap-2">
+                        <button
+                            class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                            Request a demo
+                        </button>
+                        <button
+                            class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                            Request Free Trial
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Hero Section -->
+    <section class="relative mt-20 h-screen max-h-[500px] text-white overflow-hidden">
+        <!-- Background Slides -->
+        <div class="absolute inset-0 w-full h-full">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-600/50 transition-opacity duration-1000 ease-in-out opacity-0"
+                id="slide3">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1738&q=80"
+                    alt="Career growth" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/50 transition-opacity duration-1000 ease-in-out opacity-0"
+            id="slide2">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                alt="Team collaboration" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/50 transition-opacity duration-1000 ease-in-out opacity-100"
+            id="slide1">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                alt="Professional at work" class="w-full h-full object-cover">
+        </div>
+
+
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <!-- Hero Content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="max-w-2xl lg:ml-20">
+                <div class="mb-4 flex items-center">
+                    <div class="h-px w-10 bg-white mr-4"></div>
+                    <p class="text-sm uppercase tracking-wider text-white/80">Career Opportunities</p>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
+                    Discover Your Perfect <span class="text-white">Career Path</span>
+                </h1>
+                <p class="text-xl mb-4 opacity-90 leading-relaxed">
+                    Connect with top employers and find opportunities that align with your skills, passions, and career
+                    aspirations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-4 ">
+                    <a href="#job-search"
+                        class="px-8 py-4 bg-secondary text-white rounded-lg font-semibold hover:bg-primary transition-all flex items-center justify-center shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        Explore Job Opportunities
+                    </a>
+                    <a href="#"
+                        class="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-secondary transition-all flex items-center justify-center shadow-lg hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                        Register Your Profile
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 ">
+                    <div>
+                        <p class="text-3xl font-bold">50K+</p>
+                        <p class="text-sm text-white/80">Job Openings</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">200+</p>
+                        <p class="text-sm text-white/80">Companies</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">95%</p>
+                        <p class="text-sm text-white/80">Success Rate</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">24h</p>
+                        <p class="text-sm text-white/80">Quick Response</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+            <button class="w-3 h-3 rounded-full bg-white" onclick="showSlide(0)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50" onclick="showSlide(1)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50" onclick="showSlide(2)"></button>
+        </div>
+
+        <!-- Slider Buttons -->
+        <button id="prevBtn"
+            class="absolute top-1/2 -translate-y-1/2 left-6 bg-white/20 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <button id="nextBtn"
+            class="absolute top-1/2 -translate-y-1/2 right-6 bg-white/20 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('[id^="slide"]');
+
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('opacity-0', index !== n);
+                slide.classList.toggle('opacity-100', index === n);
+            });
+
+            // Update navigation indicators
+            document.querySelectorAll('.absolute.bottom-8 button').forEach((btn, index) => {
+                btn.classList.toggle('bg-white/50', index !== n);
+                btn.classList.toggle('bg-white', index === n);
+            });
+
+            currentSlide = n;
+        }
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Button event listeners
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+
+
+    <!-- Job Services Section -->
+    <section id="job-search" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800">Our Job Services</h2>
+            <p class="text-center text-gray-500 mt-2 mb-10">Everything You Need to Land Your Dream Job</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/job.png" alt="Job Search" class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Job Search</h3>
+                    <p class="text-gray-500 text-sm mt-2">Search for the job you need with ease and precision.</p>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/form.png" alt="Apply Online" class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Apply Online</h3>
+                    <p class="text-gray-500 text-sm mt-2">Submit your application quickly through our platform.</p>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/application-form.png" alt="Application Assistance"
+                        class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Application Assistance</h3>
+                    <p class="text-gray-500 text-sm mt-2">Get help crafting and submitting your job applications.</p>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/job alert.png" alt="Job Alerts" class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Job Alerts</h3>
+                    <p class="text-gray-500 text-sm mt-2">Subscribe for the latest job openings directly to your inbox.
+                    </p>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/profile verification.png" alt="Profile Verification"
+                        class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Profile Verification</h3>
+                    <p class="text-gray-500 text-sm mt-2">We make your profile trusted and employer-ready.</p>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center p-6">
+                    <img src="./images/interview.png" alt="Get Interviewed" class="w-24 h-24 object-contain mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Get Interviewed</h3>
+                    <p class="text-gray-500 text-sm mt-2">Be shortlisted and interviewed by top companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Payroll & Salary Management Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <!-- Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Payroll & Salary Management
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Automate salary processing, ensure accuracy, and streamline your payroll
+                    operations with our powerful tools designed for modern HR teams.
+                </p>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image / Illustration -->
+                <div class="relative">
+                    <img src="./images/high-angle-payroll-concept.jpg" alt="Payroll Management"
+                        class="rounded-2xl shadow-lg w-full">
+                    <span
+                        class="absolute -top-6 -left-6 bg-primary text-white px-4 py-2 rounded-xl shadow-md text-sm font-medium">
+                        Secure & Automated
+                    </span>
+                </div>
+
+                <!-- Features List -->
+                <div>
+                    <ul class="space-y-4 ">
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V4m0 12v4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900">Automated Salary Processing</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Save hours of manual work by automating monthly salary generation with accuracy.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2zm0 4c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900">Tax & Deductions Handling</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Automatically calculate taxes, deductions, and allowances with compliance.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m2 8H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900">Payslip Generation</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Provide employees with digital payslips that are secure, accessible, and easy to
+                                    download.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900">Real-time Reports</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Track payroll expenses with real-time analytics and generate reports for HR &
+                                    Finance teams.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Employee Profiles Section -->
+    <section class="py-20 bg-gradient-to-br from-[#143D4A]/5 to-[#376D6C]/10 relative overflow-hidden">
+
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <!-- Section header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                    Employee Profiles
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    All-in-one records for a complete 360° view of every team member
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content - Feature Cards -->
+                <div class="space-y-8">
+                    <!-- Personal Info Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-5 hover:shadow-lg transition-all duration-300 border-l-4 border-[#143D4A]">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 bg-[#143D4A]/10 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#143D4A]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5.121 17.804A9.969 9.969 0 0112 15c2.21 0 4.21.716 5.879 1.922M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 text-lg mb-2">Personal Info</h3>
+                            <p class="text-gray-600">Name, contact, address, emergency contacts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Details Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-5 hover:shadow-lg transition-all duration-300 border-l-4 border-[#376D6C]">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 bg-[#376D6C]/10 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#376D6C]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m-7-8h8l1 2h-10l1-2zM4 7h16v10H4V7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 text-lg mb-2">Job Details</h3>
+                            <p class="text-gray-600">Employee ID, designation, department, joining date.</p>
+                        </div>
+                    </div>
+
+                    <!-- Work Info Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-5 hover:shadow-lg transition-all duration-300 border-l-4 border-[#143D4A]">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 bg-[#143D4A]/10 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#143D4A]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 19V6m-4 6v7m8-13v13m4-9v9" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 text-lg mb-2">Work Info</h3>
+                            <p class="text-gray-600">Manager, project allocation, work location.</p>
+                        </div>
+                    </div>
+
+                    <!-- Documents Card -->
+                    <div
+                        class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-5 hover:shadow-lg transition-all duration-300 border-l-4 border-[#376D6C]">
+                        <div
+                            class="flex-shrink-0 w-14 h-14 bg-[#376D6C]/10 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-[#376D6C]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h10M7 11h10M7 15h6m5 5H6a2 2 0 01-2-2V7a2 2 0 012-2h5l2-2h5a2 2 0 012 2v12a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 text-lg mb-2">Documents</h3>
+                            <p class="text-gray-600">Resumes, ID proof, certificates, offer letters.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Text and Illustration -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 border border-gray-100">
+                    <div class="mb-8">
+                        <span
+                            class="inline-block px-4 py-1 text-sm font-semibold text-[#143D4A] bg-[#143D4A]/10 rounded-full mb-4">HR
+                            Solution</span>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">All-in-One <span
+                                class="text-[#376D6C]">Employee Records</span></h3>
+                        <p class="text-gray-600 mb-6">
+                            Get a 360° view of every employee — from personal information to job-related details.
+                            Our modern HR system ensures that you have everything in one place, secure and easy to
+                            access.
+                        </p>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#376D6C]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Secure encrypted storage</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-gray-500 mt-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#376D6C]" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Easy access from anywhere</span>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-gradient-to-r from-[#143D4A] to-[#376D6C] rounded-xl p-6 text-white">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-semibold">Employee Profile Preview</h4>
+                                <span class="text-[#376D6C]/70 text-sm">Sample</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5.121 17.804A9.969 9.969 0 0112 15c2.21 0 4.21.716 5.879 1.922M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium">John Anderson</p>
+                                    <p class="text-gray-200 text-sm">Senior Developer</p>
+                                    <p class="text-gray-200 text-sm">IT Department</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-4 -right-4">
+                            <div class="bg-white rounded-lg shadow-md px-4 py-2 flex items-center">
+                                <div class="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                                <span class="text-sm font-medium text-gray-700">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Success Stories Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Success Stories</h2>
+                <p class="text-lg text-gray-600">Hear from candidates who found their dream jobs through our platform
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Story 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-primary/10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Software Engineer at TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The job alerts feature helped me find the perfect position that matched my
+                        skills. I applied through the platform and got hired within two weeks!"</p>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-primary/10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">Marketing Manager at BrandPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The application assistance was invaluable. They helped me tailor my resume
+                        and cover letter, which resulted in multiple interview requests."</p>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-primary/10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lisa Rodriguez"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary">Lisa Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Product Designer at InnovateCo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Profile verification gave me an edge over other candidates. Employers
+                        trusted my credentials, and I landed my dream job in the design industry."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="bg-gray-100">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <h1 class="text-center font-semibold text-5xl py-5">OVER 3.5K PLUS EMPLOYES TRUST US</h1>
+            <div class=" bg-white flex items-center justify-between p-10 rounded-lg gap-10">
+                <div class="max-w-lg space-y-4">
+                    <h2 class="text-secondary text-5xl font-semibold">BASIC HR</h2>
+                    <p>“We have been using the Employee Profiles System for many years and throughout, we have
+                        experienced nothing but excellent professional support. The platform understands our HR needs
+                        and keeps pace with the way we operate. It has demonstrated a partnership approach and has
+                        played a vital role in streamlining our employee management and overall success.”
+                    </p>
+                    <div class="mt-5">
+                        <h2 class="font-semibold text-lg">Lorrain Colligan</h2>
+                        <h2 class="font-semibold text-lg">HR Director</h2>
+                    </div>
+                </div>
+                <div>
+                    <img src="./images/trust image in employee.avif" alt="" class="w-[500px] rounded-l-full bg-cover">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Dream Job?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Join thousands of professionals who have advanced their
+                careers
+                through our platform</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#"
+                    class="px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition text-center">
+                    Create Your Profile
+                </a>
+                <a href="#"
+                    class="px-8 py-3 border border-white text-white rounded-lg font-semibold hover:bg-white/10 transition text-center">
+                    Browse Jobs
+                </a>
+            </div>
+
+            <p class="mt-6 text-white/80">It's free to join • Thousands of job listings • Personalized matches</p>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="bg-secondary/10 pt-12 ">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-0 px-4 sm:px-6 lg:px-10">
+                <!-- Logo and Description -->
+                <div class="max-w-lg w-full">
+                    <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40">
+                    <span
+                        class="block ml-2  w-[145px] rounded-full h-[2px] bg-primary bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
+
+                    <p class="text-sm sm:text-base my-4 text-primary">
+                        Empowering businesses to streamline recruitment, manage talent, and optimize HR
+                        processes with ease and efficiency.
+                    </p>
+                    <div class="flex justify-start items-center gap-6 sm:gap-8 mt-6 sm:mt-10">
+                        <img src="./images/icons8-twitter.svg" alt="Twitter"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-github.svg" alt="GitHub"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-instagram.svg" alt="Instagram"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-linkedin.svg" alt="LinkedIn"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-[80px] w-full lg:w-auto">
+                    <!-- Product Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Product</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="pricing.html"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Pricing</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Features</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">AI
+                                    technology</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Partners</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Security</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Resources</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Help
+                                    center</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Resource
+                                    library</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Developer
+                                    API</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Search
+                                    for jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Workable Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Workable</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">About
+                                    us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Work
+                                    with us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Backstage</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Accessibility</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class=" px-4 sm:px-6 lg:px-[77px] py-4 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class=" text-xs sm:text-sm text-primary">© Workable Technology Limited 2012-2025</p>
+                <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-5">
+                    <a href="./Privacy_Policy.html"
+                        class=" text-xs sm:text-sm underline hover:no-underline text-primary">Privacy Policy</a>
+                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Terms And
+                        Services</a>
+                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Cookies
+                        Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- header hamburger -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.querySelector('.header')
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('translate-x-0');
+
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('-translate-x-full');
+                header.classList.add("shadow-md")
+                header.classList.remove("shadow-none")
+
+            } else {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                header.classList.remove("shadow-md")
+                header.classList.add("shadow-none")
+            }
+
+            // Animate hamburger icon
+            menuBtn.querySelectorAll('span').forEach((span, index) => {
+                if (!isOpen) {
+                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
+                    if (index === 1) span.style.opacity = '0';
+                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
+                } else {
+                    span.style.transform = '';
+                    span.style.opacity = '';
+                }
+            });
+        });
+    </script>
+
+
+  
+    
+
+</body>
+
+</html>
