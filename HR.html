@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For HR PROFESSIONAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#143D4A',
+                        secondary: '#376D6C',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<style>
+    @keyframes blob {
+        0% {
+            transform: translate(0px, 0px) scale(1);
+        }
+
+        33% {
+            transform: translate(30px, -50px) scale(1.1);
+        }
+
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+
+        100% {
+            transform: translate(0px, 0px) scale(1);
+        }
+    }
+
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+</style>
+
+<body class="bg-gray-50">
+
+    <!-- Header-->
+    <div>
+        <div class="header w-full fixed top-0 right-0 left-0 shadow-md z-[999] bg-white ">
+            <header class="flex justify-between items-center py-6 px-6 md:px-12">
+                <!-- Logo -->
+                <a href="./index.html">
+                    <div>
+                        <img src="./images/BasicHR_Logo.svg" alt="Logo" class="w-[150px] md:w-[180px]">
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav id="desktop-nav" class="hidden lg:flex items-center gap-10 z-50">
+                    <a href="product.html" class="text-[18px] font-medium hover:text-primary transition">Product</a>
+                    <a href="pricing.html" class="text-[18px] font-medium hover:text-primary transition">Pricing</a>
+                </nav>
+
+                <!-- Desktop CTA -->
+                <div id="desktop-cta" class="hidden lg:flex items-center gap-5 z-50">
+                    <button class="text-[18px] font-semibold text-primary hover:text-primary transition">
+                        Login
+                    </button>
+                    <button
+                        class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                        Request a demo
+                    </button>
+                    <button
+                        class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                        Request Free Trial
+                    </button>
+                </div>
+
+                <!-- Hamburger -->
+                <button id="menu-btn" class="lg:hidden flex flex-col justify-center gap-1.5 cursor-pointer z-50">
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                    <span class="block w-6 h-[2.5px] bg-secondary rounded transition-all duration-300"></span>
+                </button>
+            </header>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay"
+            class="hidden fixed inset-0 bg-secondary/10 bg-opacity-50 z-40 opacity-0 transition-opacity duration-300">
+        </div>
+
+        <!-- Mobile Side Menu -->
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 z-[800px]  w-full mt-[77px] h-full bg-white shadow-xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden flex flex-col z-56">
+            <div class="flex flex-col p-6 gap-4">
+                <!-- Menu Items -->
+                <nav class="flex flex-col  gap-8">
+                    <a href="product.html"
+                        class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Product</a>
+                    <a href="pricing.html"
+                        class="text-[18px] font-medium text-secondary hover:text-primary mx-auto transition">Pricing</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="mt-4 flex flex-col gap-8">
+                    <button
+                        class="text-[18px] font-semibold text-secondary hover:text-primary transition">Login</button>
+                    <div class="flex flex-col gap-2">
+                        <button
+                            class="text-lg px-5 py-2 border rounded-lg text-secondary font-medium border-secondary hover:bg-secondary hover:text-white transition">
+                            Request a demo
+                        </button>
+                        <button
+                            class="text-lg px-5 py-2 rounded-lg text-white font-medium bg-primary hover:bg-secondary transition">
+                            Request Free Trial
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Hero Section for HR Professionals -->
+    <section class="relative mt-20 h-screen max-h-[500px] text-white overflow-hidden">
+        <!-- Background Slides -->
+        <div class="absolute inset-0 w-full h-full">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-orange-600/50 transition-opacity duration-1000 ease-in-out opacity-0"
+                id="slide3">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1738&q=80"
+                    alt="HR professionals at work" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-900/50 transition-opacity duration-1000 ease-in-out opacity-0"
+            id="slide2">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                alt="HR collaboration" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/50 transition-opacity duration-1000 ease-in-out opacity-100"
+            id="slide1">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80"
+                alt="HR dashboard" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <!-- Hero Content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="max-w-2xl lg:ml-20">
+                <div class="mb-4 flex items-center">
+                    <div class="h-px w-10 bg-white mr-4"></div>
+                    <p class="text-sm uppercase tracking-wider text-white/80">For HR Professionals</p>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
+                    Empower Your <span class="text-white">HR Strategy</span>
+                </h1>
+                <p class="text-xl mb-4 opacity-90 leading-relaxed">
+                    Streamline recruitment, automate candidate tracking, and gain insights to make smarter hiring
+                    decisions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 mb-4 ">
+                    <a href="#hr-tools"
+                        class="px-8 py-4 bg-secondary text-white rounded-lg font-semibold hover:bg-primary transition-all flex items-center justify-center shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        Explore HR Tools
+                    </a>
+                    <a href="#"
+                        class="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-secondary transition-all flex items-center justify-center shadow-lg hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Join HR Community
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 ">
+                    <div>
+                        <p class="text-3xl font-bold">15K+</p>
+                        <p class="text-sm text-white/80">HR Professionals</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">500+</p>
+                        <p class="text-sm text-white/80">Recruitment Tools</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">95%</p>
+                        <p class="text-sm text-white/80">Efficiency Boost</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold">24/7</p>
+                        <p class="text-sm text-white/80">Expert Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+            <button class="w-3 h-3 rounded-full bg-white" onclick="showSlide(0)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50" onclick="showSlide(1)"></button>
+            <button class="w-3 h-3 rounded-full bg-white/50" onclick="showSlide(2)"></button>
+        </div>
+
+        <!-- Slider Buttons -->
+        <button id="prevBtn"
+            class="absolute top-1/2 -translate-y-1/2 left-6 bg-white/20 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <button id="nextBtn"
+            class="absolute top-1/2 -translate-y-1/2 right-6 bg-white/20 hover:bg-white/30 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </section>
+
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('[id^="slide"]');
+
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('opacity-0', index !== n);
+                slide.classList.toggle('opacity-100', index === n);
+            });
+
+            // Update navigation indicators
+            document.querySelectorAll('.absolute.bottom-8 button').forEach((btn, index) => {
+                btn.classList.toggle('bg-white/50', index !== n);
+                btn.classList.toggle('bg-white', index === n);
+            });
+
+            currentSlide = n;
+        }
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Button event listeners
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+
+
+    <!-- Key Features / Benefits Section (Enhanced & Professional) -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <!-- Decorative element -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#143D4A] to-[#376D6C] opacity-80"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
+            <!-- Section Heading -->
+            <div class="text-center mb-16">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Powerful Features for <span
+                        class="bg-gradient-to-r from-[#143D4A] to-[#376D6C] bg-clip-text text-transparent">HR
+                        Professionals</span>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Streamline recruitment, onboarding, and compliance with our intelligent tools
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute transform rotate-45 bg-blue-500 w-full h-4 top-6"></div>
+                        <div class="absolute transform -rotate-45 bg-blue-500 w-full h-4 top-6"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./images/icons8-users-64.png" alt="Candidate Management" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Candidate Management</h3>
+                    <p class="text-gray-600">Track applications, manage candidate pipelines, and simplify recruitment
+                        workflows.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute rounded-full bg-green-500 w-8 h-8 top-4 right-4"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-100 to-green-50 text-green-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./images/icons8-ai-96.png" alt="AI-Powered Screening" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Screening</h3>
+                    <p class="text-gray-600">Save time with automation that screens and shortlists candidates instantly.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute bg-purple-500 w-10 h-2 top-8 right-3"></div>
+                        <div class="absolute bg-purple-500 w-2 h-10 top-3 right-8"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-100 to-purple-50 text-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./images/icons8-tear-off-calendar-100.png" alt="Interview Scheduling" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Interview Scheduling</h3>
+                    <p class="text-gray-600">Simplify interview planning with built-in scheduling and calendar
+                        integration.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute transform rotate-12 bg-yellow-500 w-12 h-2 top-8 right-2"></div>
+                        <div class="absolute transform -rotate-12 bg-yellow-500 w-12 h-2 top-8 right-2"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-50 text-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./images/icons8-handshake-100.png" alt="Employee Onboarding" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Employee Onboarding</h3>
+                    <p class="text-gray-600">Welcome new hires with smooth onboarding processes and digital tools.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute bg-red-500 w-6 h-6 top-5 right-5 transform rotate-45"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-100 to-red-50 text-red-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <img src="./images/icons8-scale-100.png" alt="Compliance & Reporting" class="w-8 h-8">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Compliance & Reporting</h3>
+                    <p class="text-gray-600">Stay compliant with HR regulations and generate accurate reports
+                        effortlessly.</p>
+                </div>
+
+                <!-- Additional Card for better grid balance -->
+                <div
+                    class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+
+                    <!-- Decorative Background Dots -->
+                    <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
+                        <div class="absolute rounded-full bg-indigo-500 w-6 h-6 top-5 right-5"></div>
+                        <div class="absolute rounded-full bg-indigo-500 w-3 h-3 top-3 right-3"></div>
+                    </div>
+                    <div
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <!-- Payroll Icon (Currency / Dollar) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 8c-2.21 0-4 1.343-4 3s1.79 3 4 3 4-1.343 4-3-1.79-3-4-3zm0 0V5m0 9v3m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Payroll Management</h3>
+                    <p class="text-gray-600">
+                        Automate salary processing, track deductions, and ensure accurate employee payouts with ease.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-[#143D4A] to-[#376D6C] hover:bg-[#376D6C] transition-all duration-300 transform hover:-translate-y-1">
+                    Explore All Features
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Analytics & Insights Section -->
+    <section class="py-24 px-10 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Content -->
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Powerful <span class="text-primary">Analytics & Insights</span>
+                </h2>
+                <p class="text-lg text-gray-600 mb-10">
+                    Track every step of your hiring funnel with real-time dashboards and reports.
+                    Our analytics help HR professionals make smarter, faster, and data-driven decisions.
+                </p>
+
+                <div class="space-y-6">
+
+                    <!-- Point 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Hiring Funnel Metrics</h3>
+                            <p class="text-gray-600 text-sm">See how candidates move from application to hire.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Time-to-Hire Tracking</h3>
+                            <p class="text-gray-600 text-sm">Reduce delays and monitor efficiency of your recruitment
+                                process.</p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Diversity & Inclusion Stats</h3>
+                            <p class="text-gray-600 text-sm">Ensure fair hiring with diversity-focused reporting.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Dashboard Mockup -->
+            <div class="flex justify-center relative">
+                <img src="./images/analytics2.jpg" alt="HR Analytics Dashboard"
+                    class="w-full max-w-lg h-[400px] rounded-2xl shadow-xl">
+                <!-- Decorative Gradient -->
+                <div class="absolute -z-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl top-16 right-10"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Security & Compliance Section -->
+    <section class="py-24  relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Illustration -->
+            <div class="flex justify-center relative">
+                <img src="./images/Security & Compliance Assurance.jpg" alt="Security Illustration"
+                    class="w-full max-w-2xl drop-shadow-lg">
+                <!-- Decorative Circle -->
+                <div class="absolute -z-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl top-10 left-10"></div>
+            </div>
+
+            <!-- Right Content -->
+            <div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    Security & <span class="text-primary">Compliance Assurance</span>
+                </h2>
+                <p class="text-lg text-gray-600 mb-10">
+                    Protecting your employee and candidate data is our highest priority.
+                    Our platform is built with enterprise-grade safeguards and global compliance standards.
+                </p>
+
+                <div class="space-y-6">
+
+                    <!-- GDPR -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">GDPR Compliant</h3>
+                            <p class="text-gray-600 text-sm">Aligned with global privacy regulations ensuring
+                                transparency and trust.</p>
+                        </div>
+                    </div>
+
+                    <!-- Encryption -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-lock text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">End-to-End Encryption</h3>
+                            <p class="text-gray-600 text-sm">All sensitive data is encrypted both in transit and at
+                                rest.</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                            <i class="fas fa-certificate text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Trusted Certifications</h3>
+                            <p class="text-gray-600 text-sm">ISO 27001 & SOC 2 certified infrastructure for maximum
+                                reliability.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Background -->
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white to-gray-50"></div>
+    </section>
+
+
+
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gray-100 relative">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Frequently Asked <span class="text-primary">Questions</span>
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Everything HR professionals ask about our platform answered in one place.
+                </p>
+            </div>
+
+            <!-- Accordion -->
+            <div class="space-y-4">
+                <!-- FAQ Item -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>How does Candidate Management work in your platform?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        Our system allows HR professionals to track applicants from submission to hiring.
+                        You can review resumes, shortlist candidates, and update their hiring status in real-time.
+                    </div>
+                </div>
+
+                <!-- FAQ Item -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>Can AI-powered screening replace manual resume reviews?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        The AI doesn’t replace HR professionals but assists by filtering irrelevant applications,
+                        ranking top candidates, and saving significant time in initial screening.
+                    </div>
+                </div>
+
+                <!-- FAQ Item -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>Does your platform support interview scheduling?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        Yes. Our built-in scheduling tool syncs with Google Calendar, Outlook, and Zoom,
+                        so you can send invites and reminders seamlessly.
+                    </div>
+                </div>
+
+                <!-- FAQ Item -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>Is employee onboarding digital or manual?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        The onboarding process is fully digital — new hires can upload documents,
+                        sign contracts, and complete induction tasks directly within the platform.
+                    </div>
+                </div>
+
+                <!-- FAQ Item -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>How does compliance & reporting help HR teams?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        We provide automated compliance checks, audit trails, and real-time reports
+                        to ensure HR processes meet legal and organizational requirements.
+                    </div>
+                </div>
+
+                <!-- More items (integrations, security etc.) -->
+                <div class="border border-gray-200 rounded-xl bg-white shadow-sm">
+                    <button
+                        class="w-full flex justify-between items-center p-5 text-left text-gray-900 font-medium hover:text-primary transition"
+                        onclick="toggleFAQ(this)">
+                        <span>Is the platform secure for storing employee data?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden px-5 pb-5 text-gray-600">
+                        Yes. All data is encrypted, stored securely, and compliant with GDPR
+                        and local data protection laws.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Find Your Dream Job?</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Join thousands of professionals who have advanced their
+                careers
+                through our platform</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#"
+                    class="px-8 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition text-center">
+                    Create Your Profile
+                </a>
+                <a href="#"
+                    class="px-8 py-3 border border-white text-white rounded-lg font-semibold hover:bg-white/10 transition text-center">
+                    Browse Jobs
+                </a>
+            </div>
+
+            <p class="mt-6 text-white/80">It's free to join • Thousands of job listings • Personalized matches</p>
+        </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer class="bg-secondary/10 pt-12 ">
+        <!-- Main Footer Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex flex-col lg:flex-row justify-between items-start gap-10 lg:gap-0 px-4 sm:px-6 lg:px-10">
+                <!-- Logo and Description -->
+                <div class="max-w-lg w-full">
+                    <img src="./images/BasicHR_Logo.svg" alt="BasicHR Logo" class="w-40">
+                    <span
+                        class="block ml-2  w-[145px] rounded-full h-[2px] bg-primary bg-gradient-to-r from-[#26B199] via-[#143D4A] to-[#1a1a37]"></span>
+
+                    <p class="text-sm sm:text-base my-4 text-primary">
+                        Empowering businesses to streamline recruitment, manage talent, and optimize HR
+                        processes with ease and efficiency.
+                    </p>
+                    <div class="flex justify-start items-center gap-6 sm:gap-8 mt-6 sm:mt-10">
+                        <img src="./images/icons8-twitter.svg" alt="Twitter"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-github.svg" alt="GitHub"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-instagram.svg" alt="Instagram"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                        <img src="./images/icons8-linkedin.svg" alt="LinkedIn"
+                            class="w-8 sm:w-10 hover:opacity-80 transition-opacity ">
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-[80px] w-full lg:w-auto">
+                    <!-- Product Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Product</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="pricing.html"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Pricing</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Features</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">AI
+                                    technology</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Partners</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Security</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Resources Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Resources</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Help
+                                    center</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Resource
+                                    library</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Developer
+                                    API</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Search
+                                    for jobs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Workable Column -->
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold pb-3 text-primary">Workable</h2>
+                        <ul class="flex flex-col gap-2 sm:gap-3">
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">About
+                                    us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Work
+                                    with us</a></li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Backstage</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Accessibility</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm sm:text-base text-primary hover:text-gray-900 transition-colors">Status</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class=" px-4 sm:px-6 lg:px-[77px] py-4 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class=" text-xs sm:text-sm text-primary">© Workable Technology Limited 2012-2025</p>
+                <div class="flex flex-wrap justify-center sm:justify-end items-center gap-3 sm:gap-5">
+                    <a href="./Privacy_Policy.html"
+                        class=" text-xs sm:text-sm underline hover:no-underline text-primary">Privacy Policy</a>
+                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Terms And
+                        Services</a>
+                    <a href="#" class=" text-xs sm:text-sm underline hover:no-underline text-primary">Cookies
+                        Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- header hamburger -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.querySelector('.header')
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('translate-x-0');
+
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('-translate-x-full');
+                header.classList.add("shadow-md")
+                header.classList.remove("shadow-none")
+
+            } else {
+                mobileMenu.classList.remove('-translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                header.classList.remove("shadow-md")
+                header.classList.add("shadow-none")
+            }
+
+            // Animate hamburger icon
+            menuBtn.querySelectorAll('span').forEach((span, index) => {
+                if (!isOpen) {
+                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
+                    if (index === 1) span.style.opacity = '0';
+                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
+                } else {
+                    span.style.transform = '';
+                    span.style.opacity = '';
+                }
+            });
+        });
+    </script>
+
+    <!-- INTEGRATION CARDS SLIDER -->
+    <script>
+        const swiper = new Swiper('.integrations-swiper', {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: { slidesPerView: 2, spaceBetween: 15 },
+                640: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 5, spaceBetween: 30 },
+            },
+        });
+    </script>
+
+
+    <!-- JS for FAQ Toggle -->
+    <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("svg");
+
+            if (content.classList.contains("hidden")) {
+                // Close others
+                document.querySelectorAll("section .space-y-4 div > div").forEach(div => div.classList.add("hidden"));
+                document.querySelectorAll("section .space-y-4 button svg").forEach(svg => svg.classList.remove("rotate-180"));
+
+                // Open current
+                content.classList.remove("hidden");
+                icon.classList.add("rotate-180");
+            } else {
+                content.classList.add("hidden");
+                icon.classList.remove("rotate-180");
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
