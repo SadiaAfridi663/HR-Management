@@ -7,6 +7,9 @@
     <title>For Employees - Basic HR</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SplideJS CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -241,39 +244,39 @@
 
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('[id^="slide"]');
+        const slides = document.querySelectorAll( '[id^="slide"]' );
 
-        function showSlide(n) {
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('opacity-0', index !== n);
-                slide.classList.toggle('opacity-100', index === n);
-            });
+        function showSlide( n ) {
+            slides.forEach( ( slide, index ) => {
+                slide.classList.toggle( 'opacity-0', index !== n );
+                slide.classList.toggle( 'opacity-100', index === n );
+            } );
 
             // Update navigation indicators
-            document.querySelectorAll('.absolute.bottom-8 button').forEach((btn, index) => {
-                btn.classList.toggle('bg-white/50', index !== n);
-                btn.classList.toggle('bg-white', index === n);
-            });
+            document.querySelectorAll( '.absolute.bottom-8 button' ).forEach( ( btn, index ) => {
+                btn.classList.toggle( 'bg-white/50', index !== n );
+                btn.classList.toggle( 'bg-white', index === n );
+            } );
 
             currentSlide = n;
         }
 
         // Auto slide change every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5000);
+        setInterval( () => {
+            currentSlide = ( currentSlide + 1 ) % slides.length;
+            showSlide( currentSlide );
+        }, 5000 );
 
         // Button event listeners
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        });
+        document.getElementById( 'prevBtn' ).addEventListener( 'click', () => {
+            currentSlide = ( currentSlide - 1 + slides.length ) % slides.length;
+            showSlide( currentSlide );
+        } );
 
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
+        document.getElementById( 'nextBtn' ).addEventListener( 'click', () => {
+            currentSlide = ( currentSlide + 1 ) % slides.length;
+            showSlide( currentSlide );
+        } );
     </script>
 
 
@@ -340,17 +343,17 @@
 
 
 
-    <!-- Payroll & Salary Management Section -->
+    <!-- Employee Management Section -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <!-- Heading -->
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                    Payroll & Salary Management
+                    Employee Management
                 </h2>
                 <p class="text-lg text-gray-600">
-                    Automate salary processing, ensure accuracy, and streamline your payroll
-                    operations with our powerful tools designed for modern HR teams.
+                    Organize employee records, monitor attendance, and manage workforce data
+                    efficiently with our smart tools built for growing companies.
                 </p>
             </div>
 
@@ -358,11 +361,11 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Image / Illustration -->
                 <div class="relative">
-                    <img src="./images/high-angle-payroll-concept.jpg" alt="Payroll Management"
+                    <img src="./images/Employee Management.jpg" alt="Employee Records"
                         class="rounded-2xl shadow-lg w-full">
                     <span
                         class="absolute -top-6 -left-6 bg-primary text-white px-4 py-2 rounded-xl shadow-md text-sm font-medium">
-                        Secure & Automated
+                        Organized & Centralized
                     </span>
                 </div>
 
@@ -372,16 +375,18 @@
                         <li class="flex items-start gap-4">
                             <div
                                 class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <!-- Users Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V4m0 12v4" />
+                                        d="M17 20h5v-2a4 4 0 00-5-4m-6 6H2v-2a4 4 0 015-4m10-4a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900">Automated Salary Processing</h4>
+                                <h4 class="text-lg font-semibold text-gray-900">Centralized Employee Records</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Save hours of manual work by automating monthly salary generation with accuracy.
+                                    Maintain complete employee profiles with personal, professional, and contact
+                                    details.
                                 </p>
                             </div>
                         </li>
@@ -389,16 +394,17 @@
                         <li class="flex items-start gap-4">
                             <div
                                 class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <!-- Clock Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8c1.657 0 3-.895 3-2s-1.343-2-3-2-3 .895-3 2 1.343 2 3 2zm0 4c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2z" />
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900">Tax & Deductions Handling</h4>
+                                <h4 class="text-lg font-semibold text-gray-900">Attendance Tracking</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Automatically calculate taxes, deductions, and allowances with compliance.
+                                    Monitor check-in, check-out, and leave records in real-time for accurate tracking.
                                 </p>
                             </div>
                         </li>
@@ -406,6 +412,7 @@
                         <li class="flex items-start gap-4">
                             <div
                                 class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <!-- Document Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -413,10 +420,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900">Payslip Generation</h4>
+                                <h4 class="text-lg font-semibold text-gray-900">Performance Reviews</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Provide employees with digital payslips that are secure, accessible, and easy to
-                                    download.
+                                    Record feedback, track employee growth, and evaluate performance seamlessly.
                                 </p>
                             </div>
                         </li>
@@ -424,17 +430,17 @@
                         <li class="flex items-start gap-4">
                             <div
                                 class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <!-- Chart Icon -->
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
+                                        d="M11 11V7a1 1 0 112 0v4h2a1 1 0 010 2h-2v4a1 1 0 11-2 0v-4H9a1 1 0 010-2h2z" />
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-semibold text-gray-900">Real-time Reports</h4>
+                                <h4 class="text-lg font-semibold text-gray-900">Analytics & Insights</h4>
                                 <p class="text-gray-600 text-sm">
-                                    Track payroll expenses with real-time analytics and generate reports for HR &
-                                    Finance teams.
+                                    Get workforce insights with detailed reports on attendance, performance, and more.
                                 </p>
                             </div>
                         </li>
@@ -445,87 +451,75 @@
     </section>
 
 
+
     <!-- Employee Section -->
-    <section id="employers-section" class="py-12 bg-gradient-to-l from-primary/20 to-secondary/5">
+    <section id="employees-section" class="py-12 bg-gradient-to-l from-primary/10 to-secondary/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-10">
+
                 <!-- Content -->
                 <div class="lg:w-1/2">
-                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
-                        <i class="fas fa-briefcase mr-2"></i> For Employers
+                    <div
+                        class="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 text-primary font-medium mb-6">
+                        <i class="fas fa-users mr-2"></i> For Employees
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">
-                        Drive Business Success
+                        Empower Your Workforce
                     </h2>
                     <p class="text-lg text-gray-700 mb-8">
-                        Comprehensive tools for business leaders to manage workforce
-                        strategy, make data-driven decisions, and optimize organizational
-                        performance.
+                        Tools and resources designed to support employees with seamless
+                        access to their information, performance tracking, and growth opportunities.
                     </p>
 
+                    <!-- Features -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
-                                <i class="fas fa-chart-pie text-primary text-xl"></i>
+                                <i class="fas fa-id-badge text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">
-                                    Workforce Analytics
-                                </h3>
-                                <p class="text-gray-600">
-                                    Data-driven insights for better decisions
-                                </p>
+                                <h3 class="font-semibold text-primary mb-1">Employee Profiles</h3>
+                                <p class="text-gray-600">Access personal and job-related information easily</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
-                                <i class="fas fa-search-dollar text-primary text-xl"></i>
+                                <i class="fas fa-clock text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">
-                                    Budget Planning
-                                </h3>
-                                <p class="text-gray-600">
-                                    Plan and optimize compensation budgets
-                                </p>
+                                <h3 class="font-semibold text-primary mb-1">Attendance & Leaves</h3>
+                                <p class="text-gray-600">Track attendance, leave requests, and approvals</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
-                                <i class="fas fa-rocket text-primary text-xl"></i>
+                                <i class="fas fa-chart-line text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">
-                                    Talent Strategy
-                                </h3>
-                                <p class="text-gray-600">
-                                    Attract, retain and develop top talent
-                                </p>
+                                <h3 class="font-semibold text-primary mb-1">Performance Tracking</h3>
+                                <p class="text-gray-600">Stay updated with reviews and feedback</p>
                             </div>
                         </div>
                         <div class="flex items-start">
                             <div class="bg-secondary/10 p-2 rounded-lg mr-4">
-                                <i class="fas fa-chess text-primary text-xl"></i>
+                                <i class="fas fa-graduation-cap text-primary text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-primary mb-1">
-                                    Succession Planning
-                                </h3>
-                                <p class="text-gray-600">
-                                    Prepare for future leadership needs
-                                </p>
+                                <h3 class="font-semibold text-primary mb-1">Learning & Growth</h3>
+                                <p class="text-gray-600">Access training, courses, and certifications</p>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#"
                             class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-secondary transition text-center">
-                            Employer Solutions
+                            Employee Dashboard
                         </a>
                         <a href="#"
                             class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-[#1a1a37]/5 transition text-center">
-                            Contact Sales
+                            View Profiles
                         </a>
                     </div>
                 </div>
@@ -533,35 +527,51 @@
                 <!-- Image/Visual Slider -->
                 <div class="lg:w-1/2 flex justify-center">
                     <div class="w-full">
-                        <div class="splide" id="employers-slider">
-                            <div class="splide__track">
+                        <div class="splide" id="employees-slider">
+                            <div class="splide__track rounded-2xl overflow-hidden border-2 border-primary shadow-lg">
                                 <ul class="splide__list">
                                     <li class="splide__slide">
-                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
-                                            <img src="./images/employer-product-img1.jfif"
-                                                alt="Business Analytics Dashboard" class="w-full h-full object-cover" />
-                                        </div>
+                                        <img src="./images/employee records.jpg" alt="Employee Records"
+                                            class="w-full h-[400px] object-cover" />
                                     </li>
                                     <li class="splide__slide">
-                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
-                                            <img src="./images/employer-product-img2.jfif"
-                                                alt="Business Strategy" class="w-full h-full object-cover" />
-                                        </div>
+                                        <img src="./images/Attendance Tracking.png" alt="Attendance Tracking"
+                                            class="w-full h-[400px] object-cover" />
                                     </li>
                                     <li class="splide__slide">
-                                        <div class="bg-white rounded-2xl h-full border-2 border-primary shadow-lg overflow-hidden">
-                                            <img src="./images/employer-product-img3.jfif"
-                                                alt="Business Growth" class="w-full h-full object-cover" />
-                                        </div>
+                                        <img src="./images/Employee Growth.jpg" alt="Employee Growth"
+                                            class="w-full h-[400px] object-cover" />
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
+
+
+
+    <!-- Initialize Slider -->
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function () {
+            new Splide( '#employees-slider', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 3000,
+                pauseOnHover: true,
+                arrows: true,
+                pagination: true,
+                speed: 800,
+            } ).mount();
+        } );
+    </script>
+
+
+
 
     <!-- Success Stories Section -->
     <section class="py-16 bg-white">
@@ -789,43 +799,43 @@
     <!-- header hamburger -->
     <script>
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const header = document.querySelector('.header')
+        const menuBtn = document.getElementById( 'menu-btn' );
+        const mobileMenu = document.getElementById( 'mobile-menu' );
+        const header = document.querySelector( '.header' )
 
-        menuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('translate-x-0');
+        menuBtn.addEventListener( 'click', () => {
+            const isOpen = mobileMenu.classList.contains( 'translate-x-0' );
 
-            if (isOpen) {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('-translate-x-full');
-                header.classList.add("shadow-md")
-                header.classList.remove("shadow-none")
+            if ( isOpen ) {
+                mobileMenu.classList.remove( 'translate-x-0' );
+                mobileMenu.classList.add( '-translate-x-full' );
+                header.classList.add( "shadow-md" )
+                header.classList.remove( "shadow-none" )
 
             } else {
-                mobileMenu.classList.remove('-translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-                header.classList.remove("shadow-md")
-                header.classList.add("shadow-none")
+                mobileMenu.classList.remove( '-translate-x-full' );
+                mobileMenu.classList.add( 'translate-x-0' );
+                header.classList.remove( "shadow-md" )
+                header.classList.add( "shadow-none" )
             }
 
             // Animate hamburger icon
-            menuBtn.querySelectorAll('span').forEach((span, index) => {
-                if (!isOpen) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
+            menuBtn.querySelectorAll( 'span' ).forEach( ( span, index ) => {
+                if ( !isOpen ) {
+                    if ( index === 0 ) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
+                    if ( index === 1 ) span.style.opacity = '0';
+                    if ( index === 2 ) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
                 } else {
                     span.style.transform = '';
                     span.style.opacity = '';
                 }
-            });
-        });
+            } );
+        } );
     </script>
 
 
-  
-    
+
+
 
 </body>
 

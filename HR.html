@@ -246,39 +246,39 @@
 
     <script>
         let currentSlide = 0;
-        const slides = document.querySelectorAll('[id^="slide"]');
+        const slides = document.querySelectorAll( '[id^="slide"]' );
 
-        function showSlide(n) {
-            slides.forEach((slide, index) => {
-                slide.classList.toggle('opacity-0', index !== n);
-                slide.classList.toggle('opacity-100', index === n);
-            });
+        function showSlide( n ) {
+            slides.forEach( ( slide, index ) => {
+                slide.classList.toggle( 'opacity-0', index !== n );
+                slide.classList.toggle( 'opacity-100', index === n );
+            } );
 
             // Update navigation indicators
-            document.querySelectorAll('.absolute.bottom-8 button').forEach((btn, index) => {
-                btn.classList.toggle('bg-white/50', index !== n);
-                btn.classList.toggle('bg-white', index === n);
-            });
+            document.querySelectorAll( '.absolute.bottom-8 button' ).forEach( ( btn, index ) => {
+                btn.classList.toggle( 'bg-white/50', index !== n );
+                btn.classList.toggle( 'bg-white', index === n );
+            } );
 
             currentSlide = n;
         }
 
         // Auto slide change every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }, 5000);
+        setInterval( () => {
+            currentSlide = ( currentSlide + 1 ) % slides.length;
+            showSlide( currentSlide );
+        }, 5000 );
 
         // Button event listeners
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        });
+        document.getElementById( 'prevBtn' ).addEventListener( 'click', () => {
+            currentSlide = ( currentSlide - 1 + slides.length ) % slides.length;
+            showSlide( currentSlide );
+        } );
 
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        });
+        document.getElementById( 'nextBtn' ).addEventListener( 'click', () => {
+            currentSlide = ( currentSlide + 1 ) % slides.length;
+            showSlide( currentSlide );
+        } );
     </script>
 
 
@@ -290,11 +290,11 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
             <!-- Section Heading -->
             <div class="text-center mb-16">
-
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                     Powerful Features for <span
-                        class="bg-gradient-to-r from-[#143D4A] to-[#376D6C] bg-clip-text text-transparent">HR
-                        Professionals</span>
+                        class="bg-gradient-to-r from-[#143D4A] to-[#376D6C] bg-clip-text text-transparent">
+                        HR Professionals
+                    </span>
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                     Streamline recruitment, onboarding, and compliance with our intelligent tools
@@ -311,8 +311,8 @@
                         <div class="absolute transform -rotate-45 bg-blue-500 w-full h-4 top-6"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="./images/icons8-users-64.png" alt="Candidate Management" class="w-8 h-8">
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">Candidate Management</h3>
                     <p class="text-gray-600">Track applications, manage candidate pipelines, and simplify recruitment
@@ -326,8 +326,8 @@
                         <div class="absolute rounded-full bg-green-500 w-8 h-8 top-4 right-4"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-green-100 to-green-50 text-green-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="./images/icons8-ai-96.png" alt="AI-Powered Screening" class="w-8 h-8">
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-robot text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Screening</h3>
                     <p class="text-gray-600">Save time with automation that screens and shortlists candidates instantly.
@@ -342,8 +342,8 @@
                         <div class="absolute bg-purple-500 w-2 h-10 top-3 right-8"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-purple-100 to-purple-50 text-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="./images/icons8-tear-off-calendar-100.png" alt="Interview Scheduling" class="w-8 h-8">
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-calendar-alt text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">Interview Scheduling</h3>
                     <p class="text-gray-600">Simplify interview planning with built-in scheduling and calendar
@@ -358,8 +358,8 @@
                         <div class="absolute transform -rotate-12 bg-yellow-500 w-12 h-2 top-8 right-2"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-yellow-100 to-yellow-50 text-yellow-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="./images/icons8-handshake-100.png" alt="Employee Onboarding" class="w-8 h-8">
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-handshake text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">Employee Onboarding</h3>
                     <p class="text-gray-600">Welcome new hires with smooth onboarding processes and digital tools.</p>
@@ -372,38 +372,29 @@
                         <div class="absolute bg-red-500 w-6 h-6 top-5 right-5 transform rotate-45"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-red-100 to-red-50 text-red-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <img src="./images/icons8-scale-100.png" alt="Compliance & Reporting" class="w-8 h-8">
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-balance-scale text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">Compliance & Reporting</h3>
                     <p class="text-gray-600">Stay compliant with HR regulations and generate accurate reports
                         effortlessly.</p>
                 </div>
 
-                <!-- Additional Card for better grid balance -->
+                <!-- Card 6 -->
                 <div
                     class="group bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-
-                    <!-- Decorative Background Dots -->
                     <div class="absolute top-0 right-0 w-16 h-16 opacity-5">
                         <div class="absolute rounded-full bg-indigo-500 w-6 h-6 top-5 right-5"></div>
                         <div class="absolute rounded-full bg-indigo-500 w-3 h-3 top-3 right-3"></div>
                     </div>
                     <div
-                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-indigo-100 to-indigo-50 text-indigo-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <!-- Payroll Icon (Currency / Dollar) -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 8c-2.21 0-4 1.343-4 3s1.79 3 4 3 4-1.343 4-3-1.79-3-4-3zm0 0V5m0 9v3m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-coins text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">Payroll Management</h3>
-                    <p class="text-gray-600">
-                        Automate salary processing, track deductions, and ensure accurate employee payouts with ease.
-                    </p>
+                    <p class="text-gray-600">Automate salary processing, track deductions, and ensure accurate employee
+                        payouts with ease.</p>
                 </div>
-
             </div>
 
             <!-- CTA Button -->
@@ -495,7 +486,7 @@
             <!-- Left Illustration -->
             <div class="flex justify-center relative">
                 <img src="./images/Security & Compliance Assurance.jpg" alt="Security Illustration"
-                    class="w-full max-w-2xl drop-shadow-lg">
+                    class="w-full max-w-2xl ">
                 <!-- Decorative Circle -->
                 <div class="absolute -z-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl top-10 left-10"></div>
             </div>
@@ -821,43 +812,43 @@
     <!-- header hamburger -->
     <script>
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const header = document.querySelector('.header')
+        const menuBtn = document.getElementById( 'menu-btn' );
+        const mobileMenu = document.getElementById( 'mobile-menu' );
+        const header = document.querySelector( '.header' )
 
-        menuBtn.addEventListener('click', () => {
-            const isOpen = mobileMenu.classList.contains('translate-x-0');
+        menuBtn.addEventListener( 'click', () => {
+            const isOpen = mobileMenu.classList.contains( 'translate-x-0' );
 
-            if (isOpen) {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('-translate-x-full');
-                header.classList.add("shadow-md")
-                header.classList.remove("shadow-none")
+            if ( isOpen ) {
+                mobileMenu.classList.remove( 'translate-x-0' );
+                mobileMenu.classList.add( '-translate-x-full' );
+                header.classList.add( "shadow-md" )
+                header.classList.remove( "shadow-none" )
 
             } else {
-                mobileMenu.classList.remove('-translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-                header.classList.remove("shadow-md")
-                header.classList.add("shadow-none")
+                mobileMenu.classList.remove( '-translate-x-full' );
+                mobileMenu.classList.add( 'translate-x-0' );
+                header.classList.remove( "shadow-md" )
+                header.classList.add( "shadow-none" )
             }
 
             // Animate hamburger icon
-            menuBtn.querySelectorAll('span').forEach((span, index) => {
-                if (!isOpen) {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
+            menuBtn.querySelectorAll( 'span' ).forEach( ( span, index ) => {
+                if ( !isOpen ) {
+                    if ( index === 0 ) span.style.transform = 'rotate(45deg) translate(5px, 7px)';
+                    if ( index === 1 ) span.style.opacity = '0';
+                    if ( index === 2 ) span.style.transform = 'rotate(-45deg) translate(5px, -7px)';
                 } else {
                     span.style.transform = '';
                     span.style.opacity = '';
                 }
-            });
-        });
+            } );
+        } );
     </script>
 
     <!-- INTEGRATION CARDS SLIDER -->
     <script>
-        const swiper = new Swiper('.integrations-swiper', {
+        const swiper = new Swiper( '.integrations-swiper', {
             slidesPerView: 5,
             spaceBetween: 30,
             loop: true,
@@ -874,27 +865,27 @@
                 640: { slidesPerView: 3, spaceBetween: 20 },
                 1024: { slidesPerView: 5, spaceBetween: 30 },
             },
-        });
+        } );
     </script>
 
 
     <!-- JS for FAQ Toggle -->
     <script>
-        function toggleFAQ(button) {
+        function toggleFAQ( button ) {
             const content = button.nextElementSibling;
-            const icon = button.querySelector("svg");
+            const icon = button.querySelector( "svg" );
 
-            if (content.classList.contains("hidden")) {
+            if ( content.classList.contains( "hidden" ) ) {
                 // Close others
-                document.querySelectorAll("section .space-y-4 div > div").forEach(div => div.classList.add("hidden"));
-                document.querySelectorAll("section .space-y-4 button svg").forEach(svg => svg.classList.remove("rotate-180"));
+                document.querySelectorAll( "section .space-y-4 div > div" ).forEach( div => div.classList.add( "hidden" ) );
+                document.querySelectorAll( "section .space-y-4 button svg" ).forEach( svg => svg.classList.remove( "rotate-180" ) );
 
                 // Open current
-                content.classList.remove("hidden");
-                icon.classList.add("rotate-180");
+                content.classList.remove( "hidden" );
+                icon.classList.add( "rotate-180" );
             } else {
-                content.classList.add("hidden");
-                icon.classList.remove("rotate-180");
+                content.classList.add( "hidden" );
+                icon.classList.remove( "rotate-180" );
             }
         }
     </script>
